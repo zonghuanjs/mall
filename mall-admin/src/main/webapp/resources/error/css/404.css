@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background:#FDFDFD;
+	margin:0;
+	padding:0
+	font:12px "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.leftFloat
+{
+	float:left;
+}
+.clear
+{
+	height:1px;
+	clear:both;
+	overflow:hidden;
+}
+a
+{
+	text-decoration:none;
+}
+div.main
+{
+	text-align:center;
+}
+div.header
+{
+	height:105px;
+	background:url(../images/mailHeader.jpg) no-repeat;
+}
+div.header .logo
+{
+	width:931px;
+	margin:0px auto;
+	padding:35px;
+	text-align:left;
+}
+
+div.content
+{
+	width:1001px;
+	margin:200px auto 230px auto;
+}
+div.content .image
+{
+	margin:0px 83px 0px 122px;
+}
+
+div.errorTip
+{
+	text-align:left;
+	color:#768C9D;
+	line-height:80px;
+}
+div.errorTip .text1
+{
+	font-size:60px;
+}
+div.errorTip .text2
+{
+	font-size:38px;
+}
+div.errorTip .button a
+{
+	display:block;
+	float:left;
+	width:134px;
+	height:41px;
+	line-height:41px;
+	background:#FC0;
+	border:none;
+	font-size:16px;
+	color:black;
+	margin:20px 40px 0px auto;
+	text-align:center;
+}
+div.errorTip .button a:hover
+{
+	background:#E4BC00;
+}
+div.footer
+{
+	width:1001px;
+	text-align:center;
+	margin:0px auto 10px auto;
+}

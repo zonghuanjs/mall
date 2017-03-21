@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT auth (authority*)>
+<!ELEMENT authority (name,uris)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT uris (uri+)>
+<!ELEMENT uri  (#PCDATA)>

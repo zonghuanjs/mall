@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+.row
+{
+	height:36px;
+	line-height:36px;
+	border-bottom:1px solid #d7e8f1;
+}
+.color
+{
+	background:#f5faff;
+}
+.item1, .item3
+{
+	width:160px;
+	text-align:right;
+}
+.item2
+{
+	width:393px;
+}
+.item2, .item4
+{
+	margin-left:5px;
+}
+.item1, .item2, .item3, .item4
+{
+	float:left;
+}
+.flat
+{
+	text-align:right;
+	padding-right:20px;
+	color:#cccccc;
+}

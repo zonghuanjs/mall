@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE auth SYSTEM "admin-auth.dtd">
+<auth>
+	<!-- 商品管理权限控制 -->
+	<authority>
+		<name>admin:product:list</name>
+		<uris>
+			<uri>/admin/product/list.do</uri>
+		</uris>
+	</authority>
+	<authority>
+		<name>admin:product:edit</name>
+		<uris>
+			<uri>/admin/product/edit.do</uri>
+			<uri>/admin/product/save.do</uri>
+		</uris>
+	</authority>
+	<authority>
+		<name>admin:product:delete</name>
+		<uris>
+			<uri>/admin/product/delete.do</uri>
+		</uris>
+	</authority>
+	<authority>
+		<name>admin:product:add</name>
+		<uris>
+			<uri>/admin/product/add.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 商品分类权限管理 -->
+	<authority>
+		<name>admin:product:category</name>
+		<uris>
+			<uri>/admin/productCategory/list.do</uri>
+			<uri>/admin/productCategory/add.do</uri>
+			<uri>/admin/productCategory/edit.do</uri>
+			<uri>/admin/productCategory/save.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 商品价格权限管理 -->
+	<authority>
+		<name>admin:product:price</name>
+		<uris>
+			<uri>/admin/price/list.do</uri>
+			<uri>/admin/price/edit.do</uri>
+			<uri>/admin/price/save.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 商品库存权限管理 -->
+	<authority>
+		<name>admin:product:stock</name>
+		<uris>
+			<uri>/admin/stock/list.do</uri>
+			<uri>/admin/stock/edit.do</uri>
+			<uri>/admin/stock/save.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 商品参数管理 -->
+	<authority>
+		<name>admin:product:parameter</name>
+		<uris>
+			<uri>/admin/parameter/list.do</uri>
+			<uri>/admin/parameter/add.do</uri>
+			<uri>/admin/parameter/edit.do</uri>
+			<uri>/admin/parameter/save.do</uri>
+			<uri>/admin/parameter/delete.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 商品规格管理 -->
+	<authority>
+		<name>admin:product:spec</name>
+		<uris>
+			<uri>/admin/specification/list.do</uri>
+			<uri>/admin/specification/add.do</uri>
+			<uri>/admin/specification/edit.do</uri>
+			<uri>/admin/specification/save.do</uri>
+			<uri>/admin/specification/delete.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 商品品牌管理 -->
+	<authority>
+		<name>admin:product:brand</name>
+		<uris>
+			<uri>/admin/brand/list.do</uri>
+			<uri>/admin/brand/add.do</uri>
+			<uri>/admin/brand/edit.do</uri>
+			<uri>/admin/brand/save.do</uri>
+			<uri>/admin/brand/delete.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 订单管理权限配置 -->
+	<authority>
+		<name>admin:order:list</name>
+		<uris>
+			<uri>/admin/order/list.do</uri>
+			<uri>/admin/order/closed/list.do</uri>
+		</uris>
+	</authority>
+	<!-- 订单编辑权限 -->
+	<authority>
+		<name>admin:order:edit</name>
+		<uris>
+			<uri>/admin/order/edit.do</uri>
+			<uri>/admin/order/save.do</uri>
+		</uris>
+	</authority>
+	<!-- 订单删除权限 -->
+	<authority>
+		<name>admin:order:delete</name>
+		<uris>
+			<uri>/admin/order/delete.do</uri>
+			<uri>/admin/order/closed/delete.do</uri>
+		</uris>
+	</authority>
+	<!-- 订单支付到账确认权限 -->
+	<authority>
+		<name>admin:order:check</name>
+		<uris>
+			<uri>/admin/order/confirm.do</uri>
+		</uris>
+	</authority>
+	<!-- 订单出库权限 -->
+	<authority>
+		<name>admin:order:prepare</name>
+		<uris>
+			<uri>/admin/order/shipping_prepared.do</uri>
+		</uris>
+	</authority>
+	<!-- 订单关闭权限 -->
+	<authority>
+		<name>admin:order:close</name>
+		<uris>
+			<uri>/admin/order/cancel.do</uri>
+		</uris>
+	</authority>
+	<!-- 订单发货权限 -->
+	<authority>
+		<name>admin:order:shipping</name>
+		<uris>
+			<uri>/admin/shipping/addshipping.do</uri>
+			<uri>/admin/payment/api_shipping.do</uri>
+		</uris>
+	</authority>
+	
+	<!-- 支付权限管理 -->
+	<authority>
+		<name>admin:payment:list</name>
+		<uris>
+			<uri>/admin/payment/list.do</uri>
+			<uri>/admin/payment/view.do</uri>
+		</uris>
+	</authority>
+	<authority>
+		<name>admin:payment:add</name>
+		<uris>
+			<uri>/admin/payment/add.do</uri>
+		</uris>
+	</authority>
+	<authority>
+		<name>admin:payment:delete</name>
+		<uris>
+			<uri>/admin/payment/delete.do</uri>
+		</uris>
+	</authority>
+</auth>

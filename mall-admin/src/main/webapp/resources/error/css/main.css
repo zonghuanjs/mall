@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	padding:0px;
+	margin:0px;
+	font:12px "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.main{
+	text-align:center;
+}
+.leftFloat
+{
+	float:left;
+}
+div.clear
+{
+	height: 1px;
+	clear: both;
+	overflow: hidden;
+}
+a
+{
+	text-decoration:none;
+}
+div.line
+{
+	width:100%;
+	height:1px;
+	border-top: 1px solid #B7B7B7;
+	overflow: hidden;
+}
+img
+{
+	border:none;
+}
+ul, li, ol{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style-type:none;
+}
+
+div.header
+{
+	height:105px;
+	background:url(../images/mailHeader.jpg) no-repeat;
+}
+div.header .logo
+{
+	width:931px;
+	margin:0px auto;
+	padding:35px;
+	text-align:left;
+}
+div.header .logo img
+{
+	width:247px;
+	height:34px;
+}

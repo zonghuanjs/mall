@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:700;
+	margin:0px;
+	padding:0px;
+	background: #1091F1;
+}
+.main
+{
+	text-align:center;
+	height:100%;
+	background:#1091F1;
+	padding-top:150px;
+}
+.theme
+{
+	width:402px;
+	margin:0px auto;
+}
+.title
+{
+	font-size:25px;
+	color:white;
+	text-align:left;
+	margin-bottom:20px;
+}
+.text, .box, .code
+{
+	float:left;
+}
+.login
+{
+	background:url(../images/login_bg.jpg) no-repeat;
+	height:296px;
+	font-size:14px;
+	padding-top:80px;
+	padding-left:80px;
+}
+.item
+{
+	color:white;
+}
+.box input
+{
+	width:180px;
+}
+input
+{
+	height:20px;
+}
+
+input.valicode
+{
+	text-transform: uppercase;
+}
+.row
+{
+	height:26px;
+	line-height:26px;
+}
+.code
+{
+	margin-left:10px;
+}
+.code img
+{
+	width:69px;
+	height:26px;
+}
+.btn
+{
+	width:80px;
+	height:30px;
+	margin:15px 122px 0px auto;
+}
+.info
+{
+	color:red;
+	margin:0px auto 0px 75px;
+}
+div.clear
+{
+	height: 1px;
+	clear: both;
+	overflow: hidden;
+}
+div .line
+{
+	padding:0px;
+	height:1px;
+	overflow: hidden;
+}
+
+#loginFrame
+{
+	display: none;
+}

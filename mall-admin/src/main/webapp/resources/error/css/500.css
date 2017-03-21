@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.content
+{
+	width:1001px;
+	margin:70px auto;
+}
+div.content .title
+{
+	font-size:35px;
+	color:#559AC7;
+}
+div.content .error
+{
+	margin:70px auto 80px auto;
+}
+div.content .sorry
+{
+	width:440px;
+	height:218px;
+	background:#F2F2F2;
+	margin:0px auto;
+	padding-top:38px;
+	font-size:18px;
+}
+div.sorry .option
+{
+	margin:50px auto 0px 110px;
+	font-size:16px;
+	line-height:44px;
+}
+div.sorry .option a
+{
+	display:block;
+	width:142px;
+	height:44px;
+	color:white;
+	background:#8DBBD9;
+	float:left;
+	margin-left:20px;
+}
+div.sorry .option a:hover
+{
+	background:#559AC7;
+}
+div.footer
+{
+	margin:20px auto;
+}

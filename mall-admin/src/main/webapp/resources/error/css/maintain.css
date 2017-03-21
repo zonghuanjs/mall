@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.content
+{
+	width:1001px;
+	margin:123px auto;
+}
+div.content .tag
+{
+	margin:0px 42px 0px 87px; 
+}
+div.text div
+{
+	line-height:40px;
+	text-align:left;
+	font-size:16px;
+}
+div.text .text1
+{
+	font-size:38px;
+	line-height:80px;
+}
+div.text .text3
+{
+	color:#1D79B6;
+}
