@@ -11,8 +11,7 @@ import javax.xml.validation.Validator;
 
 /**
  * xml文件验证器
- * @author ChenMingcai
- * 2016-11-23
+ * @author zonghuan
  *
  */
 

@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  * 队列处理工具类
- * @author ChenMingcai
+ * @author zonghuan
  *
  */
 

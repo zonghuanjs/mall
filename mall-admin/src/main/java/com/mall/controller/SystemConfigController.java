@@ -16,11 +16,9 @@ import com.mall.service.ConfigService;
 import cn.tekism.mall.bean.SystemConfig;
 import cn.tekism.mall.util.SystemConfigUtil;
 import cn.tekism.mall.util.XmlValidatorUtils;
-
 /**
  * 系统配置控制器
- * @author chenmingcai
- * 2014-09-27
+ * @author zonghuan
  *
  */
 

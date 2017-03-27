@@ -9,8 +9,7 @@ import com.mall.service.AdminService;
 
 /**
  * 
- * @author ChenMingcai
- * 2014-09-29
+ * @author zonghuan
  *
  */
 

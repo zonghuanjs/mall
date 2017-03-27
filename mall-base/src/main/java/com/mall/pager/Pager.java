@@ -5,9 +5,9 @@ import java.util.Set;
 
 /**
  * 分页器
- * @author ChenMingcai
- * 2014-09-29
+ * @author zonghuan
  *
+ * @param <T>
  */
 
 public class Pager<T>

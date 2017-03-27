@@ -67,7 +67,7 @@
 				</div>
 				<div class="link">
 					<strong></strong>
-					
+					您好
 					<#if admin??>您好, ${admin.username}!
 					<#if authorities?seq_contains('admin:admin')>
 						<a href="${base}/admin/adminUser/edit!${admin.id}.do" target="iframe">[账号设置]</a>

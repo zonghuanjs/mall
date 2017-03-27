@@ -12,8 +12,7 @@ import javax.imageio.ImageIO;
 
 /**
  * 图片处理工具类
- * @author ChenMingcai
- * 2015-04-27
+ * @author zonghuan
  *
  */
 

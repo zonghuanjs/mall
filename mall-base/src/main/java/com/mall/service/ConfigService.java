@@ -2,9 +2,8 @@ package com.mall.service;
 
 /**
  * 系统配置服务接口
- * @author ChenMingcai
- * 2015-08-04
- * 
+ * @author zonghuan
+ *
  */
 
 public interface ConfigService

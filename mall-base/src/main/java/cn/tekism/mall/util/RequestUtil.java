@@ -17,8 +17,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
- * 
- * @author ChenMingcai
+ * 队列处理工具类
+ * @author zonghuan
  *
  */
 

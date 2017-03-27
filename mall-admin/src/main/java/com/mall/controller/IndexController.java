@@ -9,8 +9,7 @@ import com.mall.controller.base.BaseController;
 
 /**
  * 后台管理首页控制器
- * @author ChenMingcai
- * 2014-09-26创建, 2015-09-11修改
+ * @author zonghuan
  *
  */
 

@@ -4,7 +4,7 @@ import cn.tekism.mall.util.Configable;
 
 /**
  * 系统配置接口
- * @author ChenMingcai
+ * @author zonghuan
  *
  */
 

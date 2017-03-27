@@ -13,8 +13,7 @@ import cn.tekism.mall.util.ConfigUtils;
 
 /**
  * 系统配置服务实现
- * @author ChenMingcai
- *	2015-08-04
+ * @author zonghuan
  *
  */
 

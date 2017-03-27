@@ -9,8 +9,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 /**
  * 并发工具集
- * @author ChenMingcai
- * 2016-05-23
+ * @author zonghuan
  *
  */
 

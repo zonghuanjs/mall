@@ -9,7 +9,7 @@ import org.apache.commons.lang.StringUtils;
 
 /**
  * 时间操作工具类
- * @author ChenMingcai
+ * @author zonghuan
  *
  */
 

@@ -9,8 +9,10 @@ import com.mall.pager.Pager;
 
 /**
  * 
- * @author ChenMingcai
+ * @author zonghuan
  *
+ * @param <PK>
+ * @param <T>
  */
 
 public interface BaseService<PK extends Serializable, T>

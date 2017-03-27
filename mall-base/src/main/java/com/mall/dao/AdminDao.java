@@ -4,8 +4,7 @@ import com.mall.entity.Admin;
 
 /**
  * 
- * @author chenmingcai
- * 2014-09-27
+ * @author zonghuan
  *
  */
 

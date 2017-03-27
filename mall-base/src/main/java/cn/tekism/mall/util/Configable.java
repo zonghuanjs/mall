@@ -2,9 +2,6 @@ package cn.tekism.mall.util;
 
 /**
  * 可配置接口
- * @author ChenMingcai
- * 2015-07-31
- * 
  */
 
 public interface Configable

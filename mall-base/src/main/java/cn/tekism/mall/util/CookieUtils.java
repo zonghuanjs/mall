@@ -12,10 +12,9 @@ import org.springframework.util.Assert;
 
 /**
  * 
- * @author ChenMingcai
+ * @author zonghuan
  *
  */
-
 
 public final class CookieUtils
 {

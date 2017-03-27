@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * Criteria工具类
- * @author huan.zong
+ * @author zonghuan
  *
  */
 

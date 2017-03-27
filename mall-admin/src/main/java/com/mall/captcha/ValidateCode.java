@@ -17,8 +17,7 @@ import com.mall.controller.base.BaseController;
 
 /**
  * 验证码模块控制器
- * @author ChenMingcai
- * 2014-09-28(2016-01-16 升级    @author ChenMingcai)
+ * @author zonghuan
  *
  */
 

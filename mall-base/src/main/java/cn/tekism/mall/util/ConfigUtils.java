@@ -4,9 +4,8 @@ import java.lang.reflect.Field;
 
 /**
  * 系统配置工具类
- * @author ChenMingcai
- * 2015-07-31
- * 
+ * @author zonghuan
+ *
  */
 
 public final class ConfigUtils

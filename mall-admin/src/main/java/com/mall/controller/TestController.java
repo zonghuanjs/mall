@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sun.jdi.Method;
+
 
 @Controller 
 public class TestController
@@ -87,4 +89,15 @@ public class TestController
         //8.关闭sos
         sos.close();
     }
+	@RequestMapping(value="/test.html", method=RequestMethod.GET)
+	public ModelAndView test(){
+		ModelAndView mv = new ModelAndView("test"); 
+		return mv;		
+	}
+	
+	@RequestMapping(value="/test1.html", method=RequestMethod.GET)
+	public ModelAndView test1(){
+		ModelAndView mv = new ModelAndView("product_list"); 
+		return mv;		
+	}
 }
