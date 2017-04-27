@@ -123,6 +123,7 @@ public class SystemConfigUtil
 			try
 			{
 				config = (SystemConfig)cacheClient.get(CONFIG_KEY);
+				System.out.println("aaa");
 			}
 			catch(Exception ex)
 			{
