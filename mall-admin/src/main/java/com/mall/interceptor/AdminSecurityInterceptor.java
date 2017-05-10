@@ -36,7 +36,7 @@ public class AdminSecurityInterceptor extends HandlerInterceptorAdapter
 	/**
 	 * 登录URI
 	 */
-	private static final String LOGIN_URL = "/login.html";
+	private static final String LOGIN_URL = "/login.do";
 	
 	/**
 	 * 管理服务

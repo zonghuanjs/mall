@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mall.controller.base.BaseController;
 import com.mall.entity.Admin;
+import com.mall.entity.Role;
 import com.mall.log.OperationType;
 import com.mall.log.annotation.LogMethod;
 import com.mall.pager.Pager;
@@ -46,7 +49,7 @@ public class AdminController extends BaseController
 	@Autowired
 	private RoleService roleService;
 	
-	@RequestMapping(value="list.html", method=RequestMethod.GET)
+	@RequestMapping(value="list", method=RequestMethod.GET)
 	public ModelAndView adminUserList(@RequestParam(required=false, value="pageNumber") Integer pageNumber,
 			@RequestParam(required=false, value="pageSize") Integer pageSize,
 			@RequestParam(required = false, value="searchValue") String searchValue)
@@ -80,7 +83,7 @@ public class AdminController extends BaseController
 		return mv;
 	}
 	
-	@RequestMapping(value="add.html", method=RequestMethod.GET)
+	@RequestMapping(value="add", method=RequestMethod.GET)
 	public ModelAndView addAdminUser()
 	{
 		ModelAndView mv = new ModelAndView("system/admin/add");
@@ -92,8 +95,8 @@ public class AdminController extends BaseController
 	 * 添加管理员
 	 * @return
 	 */
-	@RequestMapping(value="add.html", method=RequestMethod.POST)
-	@LogMethod(type=OperationType.login, message="管理员登录", parameter={"username"})
+	@RequestMapping(value="add", method=RequestMethod.POST)
+	@LogMethod(type=OperationType.add, message="添加管理员", parameter={"username"})
 	public String newAdminUser(@RequestParam("username") String username)
 	{
 		Admin model = new Admin();
@@ -109,20 +112,18 @@ public class AdminController extends BaseController
 		model.setEnabled(Boolean.valueOf(this.getParameter("isEnabled")));
 		model.setLocked(false);
 		//save data to admin
-		if(this.adminService.add(model))
-		{
-			//add role to admin
-			Long[] roleIds = this.getLongParameters("roleIds");
-			model.getRoles().addAll(this.roleService.get(roleIds));	
-			this.adminService.update(model);
-		}
+		Long[] roleIds = this.getLongParameters("roleIds");
+		Set<Role> roles = new HashSet<>();
+		roles.addAll(this.roleService.get(roleIds));
+		model.setRoles(roles);	
+		this.adminService.add(model);
 		return "redirect:/admin/list.html";
 	}
 	
-	@RequestMapping(value="edit.html", method=RequestMethod.GET)
+	@RequestMapping(value="edit", method=RequestMethod.GET)
 	public ModelAndView editAdmin(@RequestParam(value="id") Long adminId)
 	{
-		ModelAndView mv = new ModelAndView("admin/system/admin_add");
+		ModelAndView mv = new ModelAndView("system/admin/add");
 		mv.addObject("roles", this.roleService.getAll());
 		Admin admin = this.adminService.get(adminId);
 		if(admin != null)
@@ -135,8 +136,8 @@ public class AdminController extends BaseController
 	 * @param adminId
 	 * @return
 	 */
-	@RequestMapping(value="save.html", method=RequestMethod.POST)
-	//@AdminOperationMethod(operationType=AdminOperationType.editAdmin)
+	@RequestMapping(value="save", method=RequestMethod.POST)
+	@LogMethod(type=OperationType.update, message="编辑管理员", parameter={"id"})
 	public String saveAdmin(@RequestParam(value="id") Long adminId)
 	{
 		Admin admin = this.adminService.get(adminId);
@@ -153,9 +154,13 @@ public class AdminController extends BaseController
 			admin.setModifyDate(new Date());
 			admin.setEnabled(Boolean.valueOf(this.getParameter("isEnabled")));
 			
-			admin.getRoles().clear();
+			/*admin.getRoles().clear();
 			Long[] roleIds = this.getLongParameters("roleIds");
-			admin.getRoles().addAll(this.roleService.get(roleIds));	
+			admin.getRoles().addAll(this.roleService.get(roleIds));	*/
+			Long[] roleIds = this.getLongParameters("roleIds");
+			Set<Role> roles = new HashSet<>();
+			roles.addAll(this.roleService.get(roleIds));
+			admin.setRoles(roles);
 			//update admin
 			this.adminService.update(admin);
 		}
@@ -166,8 +171,8 @@ public class AdminController extends BaseController
 	 * 删除管理员
 	 * @param response
 	 */
-	@RequestMapping(value="delete.html", method=RequestMethod.POST)
-	//@LogMethod(type=OperationType.login, message="管理员登录", parameter={"username"})
+	@RequestMapping(value="delete", method=RequestMethod.POST)
+	@LogMethod(type=OperationType.delete, message="删除管理员", parameter={"ids"})
 	public void deleteAdmin(HttpServletResponse response)
 	{
 		ObjectMapper mapper = new ObjectMapper();
@@ -187,7 +192,7 @@ public class AdminController extends BaseController
 		}
 	}
 	
-	@RequestMapping(value="checkAdminName.html")
+	@RequestMapping(value="checkAdminName")
 	public void checkAdminName(PrintWriter out)
 	{
 		String username = this.getParameter("username");

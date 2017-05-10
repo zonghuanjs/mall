@@ -32,14 +32,14 @@ public class LoginController extends BaseController
 	@Autowired
 	private AdminService adminService;
 	
-	@RequestMapping(value="/login.html", method=RequestMethod.GET)
+	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView openLogin()
 	{
 		ModelAndView mv = new ModelAndView("login");
 		return mv;
 	}
 	
-	@RequestMapping(value="/login.html", method=RequestMethod.POST)
+	@RequestMapping(value="/login", method=RequestMethod.POST)
 	//@AdminLoginMethod(remark="管理员登录")
 	public void login(HttpServletResponse response)
 	{
@@ -121,7 +121,7 @@ public class LoginController extends BaseController
 		}
 	}
 	
-	@RequestMapping(value="/logout.html")
+	@RequestMapping(value="/logout")
 	public String logout()
 	{
 		this.getSession().removeAttribute(SystemConfig.ADMIN_LOGIN_KEY);

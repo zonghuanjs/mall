@@ -360,39 +360,39 @@
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/task/list.do" target="iframe">任务调度</a>
+							<a href="task/list.do" target="iframe">任务调度</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/task_data/list.do" target="iframe">任务数据</a>
+							<a href="task_data/list.do" target="iframe">任务数据</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/area/list.do" target="iframe">地区管理</a>
+							<a href="area/list.do" target="iframe">地区管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/paymentMethod/list.do" target="iframe">支付方式</a>
+							<a href="payment_method/list.do" target="iframe">支付方式</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/shippingMethod/list.do" target="iframe">配送方式</a>
+							<a href="shipping_method/list.do" target="iframe">配送方式</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/deliveryCorp/list.do" target="iframe">物流公司</a>
+							<a href="delivery_corp/list.do" target="iframe">物流公司</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/plugin/plugin_list.do" target="iframe">插件配置</a>
+							<a href="plugin/list.do" target="iframe">插件配置</a>
 						</dd>
 					
 						<dd>
-							<a href="admin/list.html" target="iframe">管理员</a>
+							<a href="admin/list.do" target="iframe">管理员</a>
 						</dd>
 					
 						<dd>
-							<a href="role/list.html" target="iframe">角色管理</a>
+							<a href="role/list.do" target="iframe">角色管理</a>
 						</dd>
 					
 						<dd>
@@ -417,7 +417,7 @@
 				</dl>
 			</td>
 			<td>
-				<iframe id="iframe" name="iframe" src="${base}/home.html" frameborder="0"></iframe>
+				<iframe id="iframe" name="iframe" src="${base}/home.do" frameborder="0"></iframe>
 			</td>
 		</tr>
 	</table>

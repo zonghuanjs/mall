@@ -56,7 +56,7 @@ public class SystemConfigController extends BaseController
 	 * 保存系统配置
 	 * @return
 	 */
-	@RequestMapping(value="/update.html", method=RequestMethod.POST)
+	@RequestMapping(value="/update", method=RequestMethod.POST)
 	//@AdminOperationMethod(operationType=AdminOperationType.editSystemSetting)
 	public String updateConfig(@RequestParam(required=false, value="securityLogin") boolean securityLogin)
 	{

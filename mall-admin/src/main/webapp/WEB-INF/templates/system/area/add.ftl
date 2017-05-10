@@ -3,13 +3,12 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加地区 </title>
 
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css"/>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 
@@ -31,7 +30,7 @@ $().ready(function() {
 	<div class="path">
 		<a href="${base}/admin/common/index.jhtml">首页</a> &raquo;  添加地区
 	</div>
-	<form id="inputForm" action="<#if area??>${base}/admin/area/save!${area.id}.do<#else>${base}/admin/area/add.do</#if>" method="post">
+	<form id="inputForm" action="<#if area??>${base}/area/save.do?id=${area.id}<#else>${base}/area/add.do</#if>" method="post">
 		<#if parent??>
 			<input type="hidden" name="parent" value="${parent.id}" />
 		<#else>

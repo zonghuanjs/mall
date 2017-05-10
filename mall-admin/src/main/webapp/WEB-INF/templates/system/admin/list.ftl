@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <head>
-<base href="${base}/"/>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>管理中心-特科芯商城</title>
-<link type="text/css" rel="stylesheet" href="resources/css/list.css"/>
-<script type="text/javascript" src="resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="resources/js/list.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css"/>
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 </head>
 <body>
 
 	<div class="path">
-		<a href="home.html">首页</a> &raquo; 管理员列表 <span>(共<span id="pageTotal">${adminUserList?size}</span>条记录)</span>
+		<a href="home.do">首页</a> &raquo; 管理员列表 <span>(共<span id="pageTotal">${adminUserList?size}</span>条记录)</span>
 	</div>
 	<form id="listForm" action="" method="get">
 		<div class="bar">
-			<a href="admin/add.html" class="iconButton">
+			<a href="add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -143,7 +142,7 @@
 						<span title="${admin.createDate}">${admin.createDate}</span>
 					</td>
 					<td>
-						<a href="edit!${admin.id}.do">[编辑]</a>
+						<a href="edit.do?id=${admin.id}">[编辑]</a>
 					</td>
 				</tr>
 		</#list>

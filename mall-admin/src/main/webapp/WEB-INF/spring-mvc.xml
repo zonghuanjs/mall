@@ -55,10 +55,10 @@
     		<mvc:mapping path="/**"/>
     		<bean class="com.mall.interceptor.CommonPageInterceptor" />
     	</mvc:interceptor>
-    	<mvc:interceptor>
+    	<!-- <mvc:interceptor>
     	    <mvc:mapping path="/admin/**"/>
     		<bean class="com.mall.interceptor.AdminSecurityInterceptor" />
-    	</mvc:interceptor>
+    	</mvc:interceptor> -->
     </mvc:interceptors>
 	<!-- aop -->
     <aop:aspectj-autoproxy />

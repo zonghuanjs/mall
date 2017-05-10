@@ -3,19 +3,19 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>地区列表</title>
 
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css" />
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css" />
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 地区列表
+		<a href="${base}/home.do">首页</a> &raquo; 地区列表
 	</div>
 	<div class="bar">
-		<a href="<#if parent??>${base}/admin/area/add!${parent.id}.do<#else>${base}/admin/area/add.do</#if>" class="iconButton">
+		<a href="<#if parent??>${base}/area/add.do?id=${parent.id}<#else>${base}/area/add.do</#if>" class="iconButton">
 			<span class="addIcon">&nbsp;</span>添加
 		</a>
 		<a href="javascript:;" id="deleteButton" class="iconButton disabled">
@@ -24,11 +24,11 @@
 		<#if parent??>
 			<div class="pageBar">
 				<#if parent.parent??>
-					<a href="${base}/admin/area/list!${parent.parent.id}.do" class="iconButton">
+					<a href="${base}/area/list.do?id=${parent.parent.id}" class="iconButton">
 						<span class="upIcon">&nbsp;</span>上级地区
 					</a>
 				<#else>
-					<a href="${base}/admin/area/list.do" class="iconButton">
+					<a href="${base}/area/list.do" class="iconButton">
 						<span class="upIcon">&nbsp;</span>上级地区
 					</a>
 				</#if>
@@ -48,8 +48,8 @@
 					    
 						<td>
 						    <input type="checkbox" name="ids"  value="${area.id}"/>										  
-							<a href="${base}/admin/area/list!${area.id}.do" title="">${area.name}</a>
-							<a href="${base}/admin/area/edit!${area.id}.do">编辑</a>
+							<a href="${base}/area/list.do?id=${area.id}" title="">${area.name}</a>
+							<a href="${base}/area/edit.do?id=${area.id}">编辑</a>
 														
 						</td>
 					<#else>

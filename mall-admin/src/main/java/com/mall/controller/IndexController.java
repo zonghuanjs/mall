@@ -21,7 +21,7 @@ public class IndexController extends BaseController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/index.html", method = RequestMethod.GET)
+	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("index");
 		return mv;
@@ -32,7 +32,7 @@ public class IndexController extends BaseController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/home.html", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("home");
 

@@ -42,7 +42,7 @@ public class RoleController extends BaseController
 	 * 查看角色列表
 	 * @return
 	 */
-	@RequestMapping(value="list.html", method=RequestMethod.GET)
+	@RequestMapping(value="list", method=RequestMethod.GET)
 	public ModelAndView listRoles(@RequestParam(required=false, value="pageNumber") Integer pageNumber,
 			@RequestParam(required=false, value="pageSize") Integer pageSize,
 			@RequestParam(required = false, value="searchValue") String searchValue)
@@ -77,7 +77,7 @@ public class RoleController extends BaseController
 		return mv;
 	}
 	
-	@RequestMapping(value="add.html", method=RequestMethod.GET)
+	@RequestMapping(value="add", method=RequestMethod.GET)
 	public ModelAndView addRole()
 	{
 		ModelAndView mv = new ModelAndView("system/role/add");
@@ -88,7 +88,7 @@ public class RoleController extends BaseController
 	 * 增加管理员角色
 	 * @return
 	 */
-	@RequestMapping(value="add.html", method=RequestMethod.POST)
+	@RequestMapping(value="add", method=RequestMethod.POST)
 	//@AdminOperationMethod(operationType=AdminOperationType.addRole)
 	public String newRole(@RequestParam("name") String name)
 	{
@@ -113,7 +113,7 @@ public class RoleController extends BaseController
 	 * 保存角色
 	 * @return
 	 */
-	@RequestMapping(value="save.html", method=RequestMethod.POST)
+	@RequestMapping(value="save", method=RequestMethod.POST)
 	@LogMethod(type=OperationType.update, message="编辑角色", parameter={"id"})
 	public String saveRole(@RequestParam("id") Long roleId)
 	{
@@ -139,7 +139,7 @@ public class RoleController extends BaseController
 		return "redirect:/role/list.html";
 	}
 	
-	@RequestMapping(value="edit.html", method=RequestMethod.GET)
+	@RequestMapping(value="edit", method=RequestMethod.GET)
 	public ModelAndView editRole(@RequestParam("id") Long roleId)
 	{
 		ModelAndView mv = new ModelAndView("system/role/add");
@@ -160,7 +160,7 @@ public class RoleController extends BaseController
 	 * 删除角色
 	 * @param response
 	 */
-	@RequestMapping(value="delete.html", method=RequestMethod.POST)
+	@RequestMapping(value="delete", method=RequestMethod.POST)
 	@LogMethod(type = OperationType.delete, message = "删除角色", parameter = {"ids"})
 	public void deleteRole(HttpServletResponse response)
 	{
