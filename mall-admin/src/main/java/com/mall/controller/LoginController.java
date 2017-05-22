@@ -13,13 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mall.bean.SystemConfig;
 import com.mall.controller.base.BaseController;
 import com.mall.entity.Admin;
 import com.mall.entity.Role;
 import com.mall.service.AdminService;
-
-import cn.tekism.mall.bean.SystemConfig;
-import cn.tekism.mall.util.CommonUtil;
+import com.mall.util.CommonUtil;
 
 /**
  * 

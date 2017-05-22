@@ -29,8 +29,7 @@ import com.mall.log.annotation.LogMethod;
 import com.mall.pager.Pager;
 import com.mall.service.AdminService;
 import com.mall.service.RoleService;
-
-import cn.tekism.mall.util.CommonUtil;
+import com.mall.util.CommonUtil;
 
 /**
  * 管理员管理

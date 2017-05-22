@@ -13,14 +13,13 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+import com.mall.bean.SystemConfig;
 import com.mall.entity.Admin;
 import com.mall.entity.Log;
 import com.mall.log.annotation.LogMethod;
 import com.mall.service.AdminService;
 import com.mall.service.LogService;
-
-import cn.tekism.mall.bean.SystemConfig;
-import cn.tekism.mall.util.RequestUtil;
+import com.mall.util.RequestUtil;
 
 /**
  * 系统日志处理程序

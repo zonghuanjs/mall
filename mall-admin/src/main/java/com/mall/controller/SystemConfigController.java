@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mall.bean.SystemConfig;
 import com.mall.controller.base.BaseController;
 import com.mall.service.ConfigService;
-
-import cn.tekism.mall.bean.SystemConfig;
-import cn.tekism.mall.util.SystemConfigUtil;
-import cn.tekism.mall.util.XmlValidatorUtils;
+import com.mall.util.SystemConfigUtil;
+import com.mall.util.XmlValidatorUtils;
 /**
  * 系统配置控制器
  * @author zonghuan

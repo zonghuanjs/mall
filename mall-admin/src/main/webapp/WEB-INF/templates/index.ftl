@@ -396,23 +396,23 @@
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/message/list.do" target="iframe">短信消息</a>
+							<a href="message/list.do" target="iframe">短信消息</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/system/ad_admin.do" target="iframe">广告位设置</a>
+							<a href="system/ad_admin.do" target="iframe">广告位设置</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/system/mobile_home.do" target="iframe">手机广告位设置</a>
+							<a href="system/mobile_home.do" target="iframe">手机广告位设置</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/log/list.do" target="iframe">日志管理</a>
+							<a href="log/list.do" target="iframe">日志管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/app/list.do" target="iframe">安装包管理</a>
+							<a href="app/list.do" target="iframe">安装包管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/feedback/list.do" target="iframe">问题反馈管理</a>
+							<a href="feedback/list.do" target="iframe">问题反馈管理</a>
 						</dd>
 				</dl>
 			</td>

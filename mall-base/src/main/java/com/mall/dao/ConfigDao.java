@@ -1,6 +1,6 @@
 package com.mall.dao;
 
-import cn.tekism.mall.util.Configable;
+import com.mall.util.Configable;
 
 /**
  * 系统配置接口

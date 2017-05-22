@@ -10,7 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.ServletContextAware;
 
-import cn.tekism.mall.util.RequestUtil;
+import com.mall.util.RequestUtil;
 
 /**
  * 

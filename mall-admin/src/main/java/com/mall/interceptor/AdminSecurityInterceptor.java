@@ -14,12 +14,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.mall.bean.SystemConfig;
 import com.mall.entity.Admin;
 import com.mall.service.AdminService;
 import com.mall.util.AuthoritiesUtils;
-
-import cn.tekism.mall.bean.SystemConfig;
-import cn.tekism.mall.util.RequestUtil;
+import com.mall.util.RequestUtil;
 
 /**
  * 

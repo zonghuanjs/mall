@@ -2,16 +2,16 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加物流公司</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!deliveryCorp.do"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/delivery_corp.js"></script>
 </head>
 <body>
 	<div class="path">
 		<a href="${base}/admin/home.do">首页</a> &raquo; <#if deliveryCorp??>添加<#else>编辑</#if>物流公司
 	</div>
-	<form id="inputForm" action="<#if deliveryCorp??>${base}/admin/deliveryCorp/save!${deliveryCorp.id}.do<#else>${base}/admin/deliveryCorp/add.do</#if>" method="post">
+	<form id="inputForm" action="<#if deliveryCorp??>${base}/delivery_corp/save.do?id=${deliveryCorp.id}<#else>${base}/delivery_corp/add.do</#if>" method="post">
 		<table class="input">
 			<tr>
 				<th>
@@ -51,7 +51,7 @@
 				</th>
 				<td>
 					<input type="submit" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/deliveryCorp/list.do'" />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/delivery_corp/list.do'" />
 				</td>
 			</tr>
 		</table>

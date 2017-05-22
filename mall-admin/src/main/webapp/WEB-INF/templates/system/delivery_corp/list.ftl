@@ -2,18 +2,18 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>物流公司列表</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 </head>
 <body>
 	<div class="path">
 		<a href="${base}/admin/home.do">首页</a> &raquo; 物流公司列表 <span>(共<span id="pageTotal">${deliveryCorps?size}</span>条记录)</span>
 	</div>
-	<form id="listForm" action="${base}/admin/deliveryCorp/list.do" method="get">
+	<form id="listForm" action="${base}/delivery_corp/list.do" method="get">
 		<div class="bar">
-			<a href="${base}/admin/deliveryCorp/add.do" class="iconButton">
+			<a href="${base}/delivery_corp/add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -94,7 +94,7 @@
 						${deliveryCorp.orders}
 					</td>
 					<td>
-						<a href="${base}/admin/deliveryCorp/edit!${deliveryCorp.id}.do">[编辑]</a>
+						<a href="${base}/delivery_corp/edit.do?id=${deliveryCorp.id}">[编辑]</a>
 					</td>
 				</tr>
 			</#list>

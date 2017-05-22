@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mall.dao.ConfigDao;
 import com.mall.service.ConfigService;
-
-import cn.tekism.mall.util.ConfigUtils;
+import com.mall.util.ConfigUtils;
 
 /**
  * 系统配置服务实现

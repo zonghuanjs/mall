@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import cn.tekism.mall.util.RequestUtil;
+import com.mall.util.RequestUtil;
 
 /**
  * 所有页面的拦截器,为所有页面添加通用数据,如base

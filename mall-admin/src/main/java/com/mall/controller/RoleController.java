@@ -22,8 +22,7 @@ import com.mall.log.OperationType;
 import com.mall.log.annotation.LogMethod;
 import com.mall.pager.Pager;
 import com.mall.service.RoleService;
-
-import cn.tekism.mall.util.CommonUtil;
+import com.mall.util.CommonUtil;
 
 /**
  * 
