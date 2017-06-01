@@ -2,14 +2,14 @@ package com.mall.service.impl;
 
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Article;
 import com.mall.entity.ArticleResource;
 import com.mall.service.ArticleResourceService;
 import com.mall.service.ArticleService;
 
-@Repository
+@Service
 public class ArticleServiceImpl extends BaseServiceImpl<Long, Article> implements ArticleService {
 
 	@Autowired

@@ -23,11 +23,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * 
- * @author huan.zong
- * 
- */
 @Entity
 @Table(name="tb_product_category")
 public class ProductCategory extends BaseEntity

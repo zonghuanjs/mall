@@ -2,10 +2,9 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加参数</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!category.do"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 
@@ -48,7 +47,7 @@ $().ready(function() {
 	<div class="path">
 		<a href="${base}/admin/home.do">首页</a> &raquo; <#if group??>编辑<#else>添加</#if>参数
 	</div>
-	<form id="inputForm" action="<#if group??>${base}/admin/parameter/save.do?groupId=${group.id}<#else>${base}/admin/parameter/add.do</#if>" method="POST">
+	<form id="inputForm" action="<#if group??>save.do?groupId=${group.id}<#else>add.do</#if>" method="POST">
 		<table id="parameterTable" class="input">
 			<tr>
 				<th>
@@ -132,7 +131,7 @@ $().ready(function() {
 				</th>
 				<td>
 					<input type="submit" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/parameter/list.do'"  />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='list.do'"  />
 				</td>
 			</tr>
 		</table>

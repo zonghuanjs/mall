@@ -2,18 +2,19 @@ package com.mall.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Specification;
 import com.mall.entity.SpecificationValue;
 import com.mall.service.SpecificationService;
 import com.mall.service.SpecificationValueService;
 
-@Repository
+@Service
 public class SpecificationServiceImpl extends BaseServiceImpl<Long, Specification> implements SpecificationService {
 
-	@Autowired
+	@Resource
 	private SpecificationValueService specificationValueService;
 
 	@Override

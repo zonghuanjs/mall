@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+<base href="${base}/"/>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加商品品牌</title>
 <link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css"/>
@@ -13,11 +14,6 @@
 $().ready(function(){
 	var $backButton = $('#backButton');
 	var $inputForm = $('#inputForm');
-	
-	$backButton.bind('click', function(){
-		window.location.href = '${base}/product/BrandList.do';
-		                        
-	});
 	
 	$inputForm.validate({
 		rules: {
@@ -69,7 +65,7 @@ $().ready(function(){
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; <#if brand??>编辑<#else>添加</#if>品牌
+		<a href="home.do">首页</a> &raquo; <#if brand??>编辑<#else>添加</#if>品牌
 	</div>
 	<form id="inputForm" action="<#if brand??>${base}/brand/save.do?id=${brand.id}<#else>${base}/brand/add.do</#if>" method="post">
 		<table class="input">
@@ -138,7 +134,7 @@ $().ready(function(){
 				</th>
 				<td>
 					<input type="submit" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/brand/list.do'" />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/brand/list.do'" />
 				</td>
 			</tr>
 		</table>

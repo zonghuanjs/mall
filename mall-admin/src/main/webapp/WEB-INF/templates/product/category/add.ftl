@@ -2,16 +2,15 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加商品分类</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css"/>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css"/>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!category.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/category.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css"/>
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/category.js"></script>
 </head>
 <body>
 <div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; <#if category??>编辑<#else>添加</#if>商品分类
+		<a href="home.do">首页</a> &raquo; <#if category??>编辑<#else>添加</#if>商品分类
 	</div>
 	<form id="inputForm" action="<#if category??>save.do?id=${category.id}<#else>add.do</#if>" method="post">
 		<table class="input">

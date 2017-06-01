@@ -1,13 +1,13 @@
 package com.mall.service.impl;
 
 import java.util.Date;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Shipping;
 import com.mall.service.ShippingService;
 import com.mall.util.CommonUtil;
 
-@Repository
+@Service
 public class ShippingServiceImpl extends BaseServiceImpl<Long, Shipping> implements ShippingService {
 	@Override
 	public boolean add(Shipping model) {

@@ -4,13 +4,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.ManageMessageDao;
 import com.mall.entity.MallMessage;
 import com.mall.service.ManageMessageService;
 
-@Repository
+@Service
 public class ManageMessageServiceImpl extends BaseServiceImpl<Long, MallMessage> implements ManageMessageService {
 
 	@Autowired

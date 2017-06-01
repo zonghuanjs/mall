@@ -3,14 +3,14 @@ package com.mall.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Attribute;
 import com.mall.entity.AttributeOptions;
 import com.mall.service.AttributeOptionsService;
 import com.mall.service.AttributeService;
 
-@Repository
+@Service
 public class AttributeServiceImpl extends BaseServiceImpl<Long, Attribute> implements AttributeService {
 	@Autowired
 	private AttributeOptionsService optionService;

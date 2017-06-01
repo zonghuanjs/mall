@@ -2,15 +2,15 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>价格管理</title>
-<link rel="stylesheet" type="text/css" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
+<link rel="stylesheet" type="text/css" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 </head>
 
 <body>
 	<div class="path">
-		<a href="${base}/admin/index.do">首页</a> &raquo; 价格管理 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="index.do">首页</a> &raquo; 价格管理 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
 	<form id="listForm" action="list.do" method="get">
 		<div class="bar">
@@ -131,37 +131,7 @@
 			</#list>
 		</#if>
 		</table>
-		<input type="hidden" id="pageSize" name="pageSize" value="${pager.pageSize}" />
-		<input type="hidden" id="searchProperty" name="searchProperty" <#if searchProperty??>value="${searchProperty}"</#if> />
-		<input type="hidden" id="orderProperty" name="orderProperty" <#if orderProperty??>value="${orderProperty}"</#if>/>
-		<input type="hidden" id="orderDirection" name="orderDirection" <#if orderDirection??>value="${orderDirection}"</#if>/>
-		<input type="hidden" id="pageCount" value="${pager.pageCount}" />
-		<div class="pagination">	
-			<a class="firstPage" href="javascript: $.pageSkip(1);">&nbsp;</a>
-		<#if pager.prePageBreak>
-			<span class="pageBreak">...</span>
-		</#if>
-		<#if pager.currentIdx gt 1>
-			<a class="previousPage" href="javascript: $.pageSkip(${pager.currentIdx -1});">&nbsp;</a>
-		</#if>
-		<#list pager.start .. pager.end as k>
-			<#if k==pager.currentIdx>
-				<span class="currentPage">${k}</span>
-			<#else>
-				<a href="javascript: $.pageSkip(${k});">${k}</a>
-			</#if>
-		</#list>
-		<#if pager.nextPageBreak>
-			<span class="pageBreak">...</span>
-		</#if>
-		<#if pager.currentIdx < pager.pageCount>
-			<a class="nextPage" href="javascript: $.pageSkip(${pager.currentIdx + 1});">&nbsp;</a>
-		</#if>
-			<a class="lastPage" href="javascript: $.pageSkip(${pager.pageCount});">&nbsp;</a>
-			<span class="pageSkip">
-				共${pager.pageCount}页 到第<input id="pageNumber" name="pageNumber" value="${pager.currentIdx}" maxlength="9" onpaste="return false;" />页<button type="submit">&nbsp;</button>
-			</span>
-		</div>
+		<#include "../../common/pager.ftl">
 	</form>
 </body>
 </html>

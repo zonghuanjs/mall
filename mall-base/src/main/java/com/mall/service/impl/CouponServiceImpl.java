@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.CouponDao;
 import com.mall.entity.Coupon;
@@ -14,7 +15,7 @@ import com.mall.pager.Pager;
 import com.mall.service.CouponService;
 import com.mall.util.CommonUtil;
 
-@Repository
+@Service
 public class CouponServiceImpl extends BaseServiceImpl<Long, Coupon> implements CouponService {
 
 	@Override

@@ -1,13 +1,13 @@
 package com.mall.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.ProductParameterValueDao;
 import com.mall.entity.ProductParameterValue;
 import com.mall.service.ProductParameterValueService;
 
-@Repository
+@Service
 public class ProductParameterValueServiceImpl extends BaseServiceImpl<Long, ProductParameterValue>
 		implements ProductParameterValueService {
 

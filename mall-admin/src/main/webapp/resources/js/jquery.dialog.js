@@ -1,12 +1,3 @@
-/**
- * jquery.dialog extension
- * Chen Mingcai
- * 2014-09-30
- * 
- * @param $
- * @param window
- */
-
 (function($){
 	
 	var zIndex = 100;
@@ -163,8 +154,8 @@
 			type: 'image',
 			title: '浏览',
 			isUpload: true,
-			browserUrl: site.base + '/admin/file/browser.do',
-			uploadUrl: site.base + '/admin/file/upload.do',
+			browserUrl:'/admin/file/browser.do',
+			uploadUrl: '/admin/file/upload.do',
 			callback: null,
 			uploadFlashExtension: 'flv',
 			uploadMediaExtension: 'mp4,mpeg',

@@ -9,7 +9,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Attribute;
 import com.mall.entity.ParameterGroup;
@@ -20,7 +20,7 @@ import com.mall.service.ParameterGroupService;
 import com.mall.service.ProductCategoryService;
 import com.mall.service.ProductService;
 
-@Repository
+@Service
 public class ProductCategoryServiceImpl extends BaseServiceImpl<Long, ProductCategory>
 		implements ProductCategoryService {
 	private static final Logger logger = LoggerFactory.getLogger(ProductCategoryServiceImpl.class);

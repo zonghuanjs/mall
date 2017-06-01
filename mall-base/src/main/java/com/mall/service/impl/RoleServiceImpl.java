@@ -2,18 +2,12 @@ package com.mall.service.impl;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Role;
 import com.mall.service.RoleService;
 
-
-/**
- * 
- * @author zonghuan
- *
- */
-@Repository
+@Service
 public class RoleServiceImpl extends BaseServiceImpl<Long, Role> implements RoleService
 {
 	@Override

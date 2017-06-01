@@ -3,7 +3,7 @@ package com.mall.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.ArticleCategoryDao;
 import com.mall.entity.Article;
@@ -12,7 +12,7 @@ import com.mall.pager.Pager;
 import com.mall.service.ArticleCategoryService;
 import com.mall.service.ArticleService;
 
-@Repository
+@Service
 public class ArticleCategoryServiceImpl extends BaseServiceImpl<Long, ArticleCategory>
 		implements ArticleCategoryService {
 	// 删除文章

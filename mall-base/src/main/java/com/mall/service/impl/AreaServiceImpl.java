@@ -4,18 +4,12 @@ package com.mall.service.impl;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Area;
 import com.mall.service.AreaService;
 
-
-/**
- * 
- * @author huan.zong
- * 
- */
-@Repository
+@Service
 public class AreaServiceImpl extends BaseServiceImpl<Long, Area> implements AreaService
 {
 

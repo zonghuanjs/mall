@@ -1,6 +1,6 @@
 package com.mall.service.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.DeliveryCorp;
 import com.mall.service.DeliveryCorpService;
@@ -11,7 +11,7 @@ import com.mall.service.DeliveryCorpService;
  * @author zonghuan
  *
  */
-@Repository
+@Service
 public class DeliveryCorpServiceImpl extends BaseServiceImpl<Long, DeliveryCorp> implements DeliveryCorpService
 {
 

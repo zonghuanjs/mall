@@ -2,12 +2,12 @@ package com.mall.service.impl;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.RepairReport;
 import com.mall.service.RepairReportService;
 
-@Repository
+@Service
 public class RepairReportServiceImpl extends BaseServiceImpl<Long, RepairReport> implements RepairReportService {
 
 	@Override

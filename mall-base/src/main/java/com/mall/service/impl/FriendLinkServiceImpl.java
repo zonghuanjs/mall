@@ -1,11 +1,11 @@
 package com.mall.service.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.FriendLink;
 import com.mall.service.FriendLinkService;
 
-@Repository
+@Service
 public class FriendLinkServiceImpl extends BaseServiceImpl<Long, FriendLink> implements FriendLinkService {
 
 }

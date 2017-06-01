@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.CommentDao;
 import com.mall.entity.Comment;
@@ -16,7 +17,7 @@ import com.mall.service.CommentService;
 import com.mall.service.ProductService;
 import com.mall.util.CommonUtil;
 
-@Repository
+@Service
 public class CommentServiceImpl extends BaseServiceImpl<Long, Comment> implements CommentService {
 	@Resource
 	private ProductService productService;

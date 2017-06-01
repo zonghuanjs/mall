@@ -2,12 +2,11 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>价格编辑</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css"/>
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/datePicker/WdatePicker.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css"/>
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
+<script type="text/javascript" src="${base}/resources/datePicker/WdatePicker.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 

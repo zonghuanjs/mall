@@ -87,35 +87,35 @@
 					<dt>商品管理</dt>
 					
 						<dd>
-							<a href="${base}/admin/stock/list.do" target="iframe">库存管理</a>
+							<a href="stock/list.do" target="iframe">库存管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/price/list.do" target="iframe">价格管理</a>
+							<a href="price/list.do" target="iframe">价格管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/product/list.do" target="iframe">商品管理</a>
+							<a href="product/list.do" target="iframe">商品管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/productCategory/list.do" target="iframe">商品分类</a>
+							<a href="product_category/list.do" target="iframe">商品分类</a>
 						</dd>  
 					
 						<dd>
-							<a href="${base}/admin/parameter/list.do" target="iframe">商品参数</a>
+							<a href="parameter/list.do" target="iframe">商品参数</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/attribute/list.do" target="iframe">商品属性</a>
+							<a href="attribute/list.do" target="iframe">商品属性</a>
 						</dd>
 						
 						<dd>
-							<a href="${base}/admin/specification/list.do" target="iframe">规格管理</a>
+							<a href="specification/list.do" target="iframe">规格管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/brand/list.do" target="iframe">品牌管理</a>
+							<a href="brand/list.do" target="iframe">品牌管理</a>
 						</dd>
 					
 				</dl>

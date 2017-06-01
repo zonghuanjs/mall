@@ -1,13 +1,13 @@
 package com.mall.service.impl;
 
 import java.util.Date;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.OrderItemDao;
 import com.mall.entity.OrderItem;
 import com.mall.service.OrderItemService;
 
-@Repository
+@Service
 public class OrderItemServiceImpl extends BaseServiceImpl<Long, OrderItem> implements OrderItemService {
 	@Override
 	public boolean add(OrderItem model) {

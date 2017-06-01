@@ -3,14 +3,14 @@ package com.mall.service.impl;
 import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import com.mall.entity.Order;
 import com.mall.entity.OrderLog;
 import com.mall.service.OrderLogService;
 
-@Repository
+@Service
 public class OrderLogServiceImpl extends BaseServiceImpl<Long, OrderLog> implements OrderLogService {
 
 	@Override

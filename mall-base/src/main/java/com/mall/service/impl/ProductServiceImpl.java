@@ -14,8 +14,7 @@ import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.mall.bean.SystemConfig;
@@ -34,10 +33,8 @@ import com.mall.entity.SpecificationValue;
 import com.mall.pager.ListFilter;
 import com.mall.pager.ListPager;
 import com.mall.pager.Pager;
-import com.mall.service.AttributeService;
 import com.mall.service.CartItemService;
 import com.mall.service.GoodsService;
-import com.mall.service.LotteryService;
 import com.mall.service.MemberService;
 import com.mall.service.OrderItemService;
 import com.mall.service.ProductCategoryService;
@@ -53,43 +50,40 @@ import com.mall.util.SystemConfigUtil;
  * @author huan.zong
  * 
  */
-@Repository
+@Service
 public class ProductServiceImpl extends BaseServiceImpl<Long, Product> implements ProductService {
 	// 删除参数及参数组
-	@Autowired
+	@Resource
 	private GoodsService goodsService;
-	// 删除属性及属性可选项
-	@Autowired
-	private AttributeService attributeService;
 	// 删除图片
-	@Autowired
+	@Resource
 	private ProductImageService imageService;
 
-	@Autowired
+	@Resource
 	private SpecificationValueService specValueService;
 
 	// 删除相关商品参数
-	@Autowired
+	@Resource
 	private ProductParameterValueService productParamService;
 
-	@Autowired
+	@Resource
 	private MemberService memberService;// 会员服务
 
-	@Autowired
+	@Resource
 	private OrderItemService orderItemService;// 订单项服务
 
-	@Autowired
+	@Resource
 	private CartItemService cartItemService;// 购物车项服务
 
-	@Autowired
+	@Resource
 	private ProductDao productDao;//
 
-	@Autowired
+	@Resource
 	private ProductCategoryService productCategoryService;// 产品类别
 
-	@Resource
+	/*@Resource
 	private LotteryService ltyService;// 投奖服务
-
+*/
 	@Override
 	public boolean add(Product model) {
 		if (model != null) {
@@ -219,7 +213,7 @@ public class ProductServiceImpl extends BaseServiceImpl<Long, Product> implement
 			if (!lotterys.isEmpty()) {
 				for (Lottery lty : lotterys) {
 					lty.setProduct(null);
-					ltyService.update(lty);
+					//ltyService.update(lty);
 				}
 			}
 		}

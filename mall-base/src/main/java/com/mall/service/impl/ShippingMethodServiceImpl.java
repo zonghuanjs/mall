@@ -1,11 +1,11 @@
 package com.mall.service.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.ShippingMethod;
 import com.mall.service.ShippingMethodService;
 
-@Repository
+@Service
 public class ShippingMethodServiceImpl extends BaseServiceImpl<Long, ShippingMethod> implements ShippingMethodService {
 
 }

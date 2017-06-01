@@ -11,13 +11,6 @@ import com.mall.entity.BeanUsed;
 import com.mall.pager.Pager;
 import com.mall.service.BeanUsedService;
 
-/**
- * 芯豆消费记录服务实现
- * 
- * @author ChenMingcai 2016-05-05
- *
- */
-
 @Service
 public class BeanUsedServiceImpl extends BaseServiceImpl<Long, BeanUsed> implements BeanUsedService {
 	@Override

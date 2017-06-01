@@ -10,14 +10,10 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.ServletContextAware;
 
+import com.mall.bean.SystemConfig;
+import com.mall.entity.Admin;
+import com.mall.service.AdminService;
 import com.mall.util.RequestUtil;
-
-/**
- * 
- * @author ChenMingcai
- * 2014-09-26
- *
- */
 
 public class BaseController implements ServletContextAware
 {
@@ -63,6 +59,28 @@ public class BaseController implements ServletContextAware
 	
 	@Autowired
 	private HttpServletRequest request;
+	
+	@Autowired
+	private AdminService adminSerice;
+	
+	/**
+	 * 获取管理员名称
+	 * @return
+	 */
+	public Admin getAdmin()
+	{
+		Long id = (Long)this.getSession().getAttribute(SystemConfig.ADMIN_LOGIN_KEY);
+		return this.adminSerice.get(id);
+	}
+	/**
+	 * 获取管理员角色ID
+	 * @return
+	 */
+	public Long getAdminRole()
+	{
+		return (Long)this.getSession().getAttribute(SystemConfig.ADMIN_LOGIN_KEY);
+	}
+	
 	
 	@Override
 	public void setServletContext(ServletContext servletContext)

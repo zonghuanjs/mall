@@ -1,11 +1,11 @@
 package com.mall.service.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.AttributeOptions;
 import com.mall.service.AttributeOptionsService;
 
-@Repository
+@Service
 public class AttributeOptionsServiceImpl extends BaseServiceImpl<Long, AttributeOptions>
 		implements AttributeOptionsService {
 

@@ -2,12 +2,11 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加商品属性</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!category.do"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 
@@ -47,9 +46,9 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; <#if attribute??>编辑<#else>添加</#if>属性
+		<a href="home.do">首页</a> &raquo; <#if attribute??>编辑<#else>添加</#if>属性
 	</div>
-	<form id="inputForm" action="<#if attribute??>${base}/admin/attribute/save!${attribute.id}.do<#else>${base}/admin/attribute/add.do</#if>"  method="post">
+	<form id="inputForm" action="<#if attribute??>save.do?id=${attribute.id}<#else>add.do</#if>"  method="post">
 		<table id="attributeTable" class="input">
 			<tr>
 				<th>

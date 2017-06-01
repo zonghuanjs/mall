@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.RefundDao;
 import com.mall.entity.Apply;
@@ -18,12 +18,7 @@ import com.mall.service.OrderService;
 import com.mall.service.RefundService;
 import com.mall.util.CommonUtil;
 
-/**
- * 
- * @author Lijun
- *
- */
-@Repository
+@Service
 public class RefundServiceImpl extends BaseServiceImpl<Long, Refund> implements RefundService {
 	@Autowired
 	private OrderService orderService;

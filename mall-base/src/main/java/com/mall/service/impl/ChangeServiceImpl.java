@@ -10,13 +10,6 @@ import com.mall.service.ProductService;
 import com.mall.service.ChangeType;
 import com.mall.service.ChangeService;
 
-/**
- * 系统变更操作服务实现
- * 
- * @author ChenMingcai
- *
- */
-
 @Service
 public class ChangeServiceImpl implements ChangeService {
 	@Autowired

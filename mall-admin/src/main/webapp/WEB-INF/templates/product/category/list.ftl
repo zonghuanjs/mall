@@ -2,18 +2,18 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>商品分类列表</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 商品分类列表<span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="home.do">首页</a> &raquo; 商品分类列表<span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
 <form id="listForm" action="" method="get">
 	<div class="bar">
-		<a href="${base}/admin/productCategory/add.do" class="iconButton">
+		<a href="add.do" class="iconButton">
 			<span class="addIcon">&nbsp;</span>添加
 		</a>
 		<div class="buttonWrap">
@@ -91,13 +91,13 @@
 					${category.orders}
 				</td>
 				<td>
-					<a href="${base}/product/list-${category.id}.do" target="_blank">[查看]</a>
-					<a href="${base}/admin/productCategory/edit.do?id=${category.id}">[编辑]</a>
+					<a href="${base}/product/list.do?id=${category.id}" target="_blank">[查看]</a>
+					<a href="edit.do?id=${category.id}">[编辑]</a>
 				</td>
 			</tr>
 		</#list>
 	</table>
-	<#include "../common/pager.ftl">
+	<#include "../../common/pager.ftl">
 </form>
 </body>
 </html>

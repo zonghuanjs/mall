@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <head>
+<base href="${base}/"/>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加商品规格</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css" />
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css" />
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
 
 <script type="text/javascript">
 $().ready(function() {
@@ -80,9 +80,9 @@ var trHtml = '<tr class="specificationValueTr"> <td> &nbsp; <\/td> <td> <input t
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 添加规格
+		<a href="home.do">首页</a> &raquo; 添加规格
 	</div>
-	<form id="inputForm" action="<#if specification??>${base}/admin/specification/save.do?id=${specification.id}<#else>${base}/admin/specification/add.do</#if>" method="post">
+	<form id="inputForm" action="<#if specification??>${base}/specification/save.do?id=${specification.id}<#else>${base}/specification/add.do</#if>" method="post">
 		<table id="specificationTable" class="input">
 			<tr class="titleTr">
 				<th>

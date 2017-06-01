@@ -3,7 +3,7 @@ package com.mall.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.dao.AdPositionDao;
 import com.mall.entity.Ad;
@@ -11,7 +11,7 @@ import com.mall.entity.AdPosition;
 import com.mall.service.AdPositionService;
 import com.mall.service.AdService;
 
-@Repository
+@Service
 public class AdPositionServiceImpl extends BaseServiceImpl<Long, AdPosition> implements AdPositionService {
 	// 删除文章
 	@Autowired

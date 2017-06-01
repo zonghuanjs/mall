@@ -2,7 +2,8 @@ package com.mall.service.impl;
 
 import java.util.Iterator;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 import com.mall.entity.Product;
@@ -13,7 +14,8 @@ import com.mall.service.SpecificationValueService;
 @Service
 public class SpecificationValueServiceImpl extends BaseServiceImpl<Long, SpecificationValue>
 		implements SpecificationValueService {
-	@Autowired
+
+	@Resource
 	private ProductService productService;
 
 	@Override

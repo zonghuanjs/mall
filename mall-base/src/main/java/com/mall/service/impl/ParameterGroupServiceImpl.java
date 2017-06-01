@@ -3,14 +3,14 @@ package com.mall.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mall.entity.Parameter;
 import com.mall.entity.ParameterGroup;
 import com.mall.service.ParameterGroupService;
 import com.mall.service.ParameterService;
 
-@Repository
+@Service
 public class ParameterGroupServiceImpl extends BaseServiceImpl<Long, ParameterGroup> implements ParameterGroupService {
 
 	@Autowired
