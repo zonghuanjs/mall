@@ -2,24 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>标签列表 </title>
-
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css" />
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/select.js"></script>
+<title>文章分类列表</title>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css" />
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
+<script type="text/javascript" src="${base}/resources/js/select.js"></script>
 </head>
 <body>
-    <#assign mall_url="cn.tekism.mall.freemarker.URLMethod"?new()>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 标签列表 <span>(共<span id="pageTotal">4</span>条记录)</span>
+		<a href="${base}/home.do">首页</a> &raquo; 文章列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
-	<form id="listForm" action="" method="get">
-	<input type="hidden" id="type" name="type" <#if type??>value="${type}" </#if>/>
+	<form id="listForm" action="">
+	<input type="hidden" id="category" name="category" <#if category??>value="${category}" </#if>/>
 		<div class="bar">
-			<a href="${base}/admin/tag/add.do" class="iconButton">
+			<a href="add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -34,13 +32,12 @@
 						筛选条件<span class="arrow">&nbsp;</span>
 					</a>
 					<div class="popupMenu">
-						<ul id="filterOption" class="check">						
+						<ul id="filterOption" class="check">
+						<#list articlecategorys as articlecategory>
 							<li>
-								<a href="javascript:;" name="type" val="1" <#if type??&&type == "1"> class="checked"</#if>>文章标签</a>
+								<a href="javascript:;" name="category" val="${articlecategory.id}" <#if category??&&category == "${articlecategory.id}"> class="checked"</#if>>${articlecategory.name}</a>
 							</li>
-							<li>
-								<a href="javascript:;" name="type" val="2" <#if type??&&type == "2"> class="checked"</#if>>商品标签</a>
-							</li>														
+						</#list>																
 						</ul>
 					</div>
 				</div>
@@ -75,28 +72,26 @@
 				<div class="popupMenu">
 					<ul id="searchPropertyOption">
 						<li>
-							<a href="javascript:;" <#if searchProperty??&&searchProperty == "name"> class="current"</#if> val="name">名称</a>
+							<a href="javascript:;" <#if searchProperty??&&searchProperty=="title">class="current"</#if> val="title">标题</a>
 						</li>
+						
 					</ul>
 				</div>
 			</div>
 		</div>
 		<table id="listTable" class="list">
-			<tr>
+		<tr>
 				<th class="check">
 					<input type="checkbox" id="selectAll" />
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="name">名称</a>
+					<a href="javascript:;" class="sort" name="title">标题</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="type">类型</a>
+					<a href="javascript:;" class="sort" name="articleCategory">文章分类</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="icon">图标</a>
-				</th>
-				<th>
-					<a href="javascript:;" class="sort" name="order">排序</a>
+					<a href="javascript:;" class="sort" name="isPublication">是否发布</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort" name="createDate">创建日期</a>
@@ -105,53 +100,37 @@
 					<span>操作</span>
 				</th>
 			</tr>
-			<#list tagList as tag>
-				<tr>
+        <#list articleList as article>
+		<tr>
 					<td>
-						<input type="checkbox" name="ids" value="${tag.id}" />
+						<input type="checkbox" name="ids" value="${article.id}"/>
 					</td>
 					<td>
-						<#if tag??&&tag.name??>
-						${tag.name}
-						</#if>
+						${article.title}
 					</td>
 					<td>
-						<#if tag??&&tag.type==1>
-						文章标签
-						<#else>
-						商品标签
-						</#if>
+					   ${article.category.name}
 					</td>
 					<td>
-					    <#if tag?has_content && tag.type==2 && tag.icon?has_content>
-							<a href="${mall_url(tag.icon, base)}" target="_blank">查看</a>
-						<#else>
-						    -
-						</#if>	
+					  <#if article.publication>
+						<span class="trueIcon">&nbsp;</span>
+					  <#else>
+					    <span class="falseIcon">&nbsp;</span>
+					  </#if>
 					</td>
 					<td>
-						<#if tag??&&tag.orders??>
-						${tag.orders}
-						<#else>
-						-
-						</#if>
+						${article.createDate}
 					</td>
 					<td>
-						<#if tag??&&tag.createDate??>
-						${tag.createDate}
-						<#else>
-						-
-						</#if>
-					</td>
-					<td>
-						<a href="${base}/admin/tag/edit!${tag.id}.do">[编辑]</a>
+						<a href="edit.do?id=${article.id}">[编辑]</a>
+							<a href="${base}/help/article.do?id=${article.id}" target="_blank">[查看]</a>
 					</td>
 				</tr>
-				
-			</#list>	
-				
-		</table>
-        <#include "../common/pager.ftl">
-	</form>
+		</#list>
+	</table>
+
+	<#include "../../common/pager.ftl">
+</form>
+	
 </body>
 </html>

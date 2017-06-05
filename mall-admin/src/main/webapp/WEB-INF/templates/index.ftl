@@ -124,47 +124,47 @@
 					<dt>订单管理</dt>
 					
 						<dd>
-							<a href="${base}/admin/order/list.do?type=1" target="iframe">普通订单管理</a>
+							<a href="order/list.do?type=1" target="iframe">普通订单管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/order/list.do?type=2" target="iframe">售后订单管理</a>
+							<a href="order/list.do?type=2" target="iframe">售后订单管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/order/list.do?type=3" target="iframe">抽奖订单管理</a>
+							<a href="order/list.do?type=3" target="iframe">抽奖订单管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/order/reserve/list.do?type=5" target="iframe">预定订单管理</a>
+							<a href="order/reserve/list.do?type=5" target="iframe">预定订单管理</a>
 						</dd>						
 						<dd>
-							<a href="${base}/admin/order/list.do?memo=SD" target="iframe">其他订单管理</a>
+							<a href="order/list.do?memo=SD" target="iframe">其他订单管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/order/closed/list.do?orderStatus=-1" target="iframe">关闭订单管理</a>
-						</dd>
-					
-						<dd>
-							<a href="${base}/admin/payment/list.do" target="iframe">收款管理</a>
+							<a href="order/closed/list.do?orderStatus=-1" target="iframe">关闭订单管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/refund/list.do" target="iframe">退款管理</a>
+							<a href="payment/list.do" target="iframe">收款管理</a>
+						</dd>
+					
+						<dd>
+							<a href="refund/list.do" target="iframe">退款管理</a>
 						</dd>
 						<dd>
-							<a href="${base}/admin/refund/alipay_list.do" target="iframe">
+							<a href="refund/alipay_list.do" target="iframe">
 								退款管理<span class="red">(支付宝)</span>
 							</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/shipping/list.do" target="iframe">发货管理</a>
+							<a href="shipping/list.do" target="iframe">发货管理</a>
 						</dd>
 						
 						<dd>
-							<a href="${base}/admin/home.do" target="iframe">发货点管理</a>
+							<a href="home.do" target="iframe">发货点管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/addTax/list.do" target="iframe">增值税发票审核</a>
+							<a href="addTax/list.do" target="iframe">增值税发票审核</a>
 						</dd>
 					
 				</dl>
@@ -173,31 +173,31 @@
 					<dt>售后管理</dt>
 					
 						<dd>
-							<a href="${base}/admin/apply/list.do" target="iframe">售后申请审核</a>
+							<a href="apply/list.do" target="iframe">售后申请审核</a>
 						</dd>
 										
 						<dd>
-							<a href="${base}/admin/return/list.do" target="iframe">退货管理</a>
+							<a href="return/list.do" target="iframe">退货管理</a>
 						</dd>
 															
 						<dd>
-							<a href="${base}/admin/switch/list.do" target="iframe">换货管理</a>
+							<a href="switch/list.do" target="iframe">换货管理</a>
 						</dd>
 														
 						<dd>
-							<a href="${base}/admin/repair/list.do" target="iframe">维修管理</a>
+							<a href="repair/list.do" target="iframe">维修管理</a>
 						</dd>
 											
 						<dd>
-							<a href="${base}/admin/product_return/list.do" target="iframe">客户寄回商品</a>
+							<a href="product_return/list.do" target="iframe">客户寄回商品</a>
 						</dd>
 						
 						<dd>
-							<a href="${base}/admin/repair_report/list.do" target="iframe">故障商品检测</a>
+							<a href="repair_report/list.do" target="iframe">故障商品检测</a>
 						</dd>
 						
 						<dd>
-							<a href="${base}/admin/product_back/list.do" target="iframe">公司回寄商品</a>
+							<a href="product_back/list.do" target="iframe">公司回寄商品</a>
 						</dd>
 									
 				</dl>
@@ -206,23 +206,23 @@
 					<dt>会员管理</dt>
 					
 					    <dd>
-							<a href="${base}/admin/statistics/memberCount.do" target="iframe">会员统计</a>
+							<a href="statistics/memberCount.do" target="iframe">会员统计</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/member/list.do" target="iframe">会员管理</a>
+							<a href="member/list.do" target="iframe">会员管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/memberRank/list.do" target="iframe">会员等级</a>
+							<a href="memberRank/list.do" target="iframe">会员等级</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/comment/list.do" target="iframe">评论管理</a>
+							<a href="comment/list.do" target="iframe">评论管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/mobile_login/list.do" target="iframe">移动端登录</a>
+							<a href="mobile_login/list.do" target="iframe">移动端登录</a>
 						</dd>
 					
 				</dl>
@@ -231,36 +231,36 @@
 					<dt>内容管理</dt>
 					
 						<dd>
-							<a href="${base}/admin/navigation/list.do" target="iframe">导航管理</a>
+							<a href="navigation/list.do" target="iframe">导航管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/article/list.do" target="iframe">文章管理</a>
+							<a href="article/list.do" target="iframe">文章管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/articlecategory/list.do" target="iframe">文章分类</a>
+							<a href="article_category/list.do" target="iframe">文章分类</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/tag/list.do" target="iframe">标签管理</a>
+							<a href="tag/list.do" target="iframe">标签管理</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/friendlink/list.do" target="iframe">友情链接</a>
+							<a href="friendlink/list.do" target="iframe">友情链接</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/adPosition/list.do" target="iframe">广告位</a>
+							<a href="ad_position/list.do" target="iframe">广告位</a>
 						</dd>
 					
 						<dd>
-							<a href="${base}/admin/ad/list.do" target="iframe">广告管理</a>
+							<a href="ad/list.do" target="iframe">广告管理</a>
 						</dd>
 					
 						
 						<dd>
-							<a href="${base}/admin/page/settings.do?page=mobileHome" target="iframe">客户端首页</a>
+							<a href="page/settings.do?page=mobileHome" target="iframe">客户端首页</a>
 						</dd>
 				</dl>
 			

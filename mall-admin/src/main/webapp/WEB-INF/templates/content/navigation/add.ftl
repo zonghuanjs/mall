@@ -3,13 +3,12 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加友情链接 </title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css"/>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 
@@ -47,9 +46,9 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 添加导航
+		<a href="${base}/home.do">首页</a> &raquo; 添加导航
 	</div>
-	<form id="inputForm" action="<#if navigation??>${base}/admin/navigation/save!${navigation.id}.do<#else>${base}/admin/navigation/add.do</#if>" method="post">
+	<form id="inputForm" action="<#if navigation??>save.do?id=${navigation.id}<#else>add.do</#if>" method="post">
 		<table class="input">
 			<tr>
 				<th>
@@ -117,7 +116,7 @@ $().ready(function() {
 				</th>
 				<td>
 					<input type="submit" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/navigation/list.do'" />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='javascript:history.go(-1)'" />
 				</td>
 			</tr>
 		</table>

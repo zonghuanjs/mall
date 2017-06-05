@@ -3,14 +3,13 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加标签 </title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css"/>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/editor/kindeditor.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/editor/kindeditor.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 
@@ -35,7 +34,7 @@ $().ready(function() {
 	<div class="path">
 		<a href="${base}/admin/home.do">首页</a> &raquo; 添加标签
 	</div>
-	<form id="inputForm" action="<#if tag??>${base}/admin/tag/save!${tag.id}.do<#else>${base}/admin/tag/add.do</#if>" method="post">
+	<form id="inputForm" action="<#if tag??>save.do?id=${tag.id}<#else>add.do</#if>" method="post">
 		<table class="input">
 			<tr>
 				<th>
@@ -87,7 +86,7 @@ $().ready(function() {
 				</th>
 				<td>
 					<input type="submit" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/tag/list.do'" />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='javascript:history.go(-1)'" />
 				</td>
 			</tr>
 		</table>

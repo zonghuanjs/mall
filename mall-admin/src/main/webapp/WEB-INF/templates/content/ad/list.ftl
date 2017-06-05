@@ -2,22 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>文章分类列表</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css" />
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/select.js"></script>
+<title>广告列表 </title>
+
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css" />
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
+<script type="text/javascript" src="${base}/resources/js/select.js"></script>
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 文章列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="${base}/home.do">首页</a> &raquo; 广告列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
-	<form id="listForm" action="${base}/admin/article/list.do">
-	<input type="hidden" id="category" name="category" <#if category??>value="${category}" </#if>/>
+	<form id="listForm" action="" method="get">
+	<input type="hidden" id="position" name="position" <#if position??>value="${position}" </#if>/>
 		<div class="bar">
-			<a href="${base}/admin/article/add.do" class="iconButton">
+			<a href="add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -33,9 +34,9 @@
 					</a>
 					<div class="popupMenu">
 						<ul id="filterOption" class="check">
-						<#list articlecategorys as articlecategory>
+						<#list positions as adposition>
 							<li>
-								<a href="javascript:;" name="category" val="${articlecategory.id}" <#if category??&&category == "${articlecategory.id}"> class="checked"</#if>>${articlecategory.name}</a>
+								<a href="javascript:;" name="position" val="${adposition.id}" <#if position??&&position == adposition.id> class="checked"</#if>>${adposition.name}</a>
 							</li>
 						</#list>																
 						</ul>
@@ -57,7 +58,7 @@
 								<a href="javascript:;" val="50" <#if pager.pageSize==50>class="current"</#if>>50</a>
 							</li>
 							<li>
-								<a href="javascript:;" val="100" <#if pager.pageSize==100>class="current"</#if>>100</a>
+								<a href="javascript:;" val="100"<#if pager.pageSize==100>class="current"</#if>>100</a>
 							</li>
 						</ul>
 					</div>
@@ -72,15 +73,14 @@
 				<div class="popupMenu">
 					<ul id="searchPropertyOption">
 						<li>
-							<a href="javascript:;" <#if searchProperty??&&searchProperty=="title">class="current"</#if> val="title">标题</a>
+							<a href="javascript:;" val="title" <#if searchProperty??&&searchProperty=="title">class="current"</#if>>标题</a>
 						</li>
-						
 					</ul>
 				</div>
 			</div>
 		</div>
 		<table id="listTable" class="list">
-		<tr>
+			<tr>
 				<th class="check">
 					<input type="checkbox" id="selectAll" />
 				</th>
@@ -88,49 +88,70 @@
 					<a href="javascript:;" class="sort" name="title">标题</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="articleCategory">文章分类</a>
+					<a href="javascript:;" class="sort" name="adPosition">广告位</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="isPublication">是否发布</a>
+					<a href="javascript:;" class="sort" name="type">类型</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="createDate">创建日期</a>
+					<a href="javascript:;" class="sort" name="beginDate">起始日期</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="endDate">结束日期</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="order">排序</a>
 				</th>
 				<th>
 					<span>操作</span>
 				</th>
 			</tr>
-        <#list articleList as article>
-		<tr>
+			<#list adList as ad>
+				<tr>
 					<td>
-						<input type="checkbox" name="ids" value="${article.id}"/>
+						<input type="checkbox" name="ids" value="${ad.id}" />
 					</td>
 					<td>
-						${article.title}
+						<span title="正品保障">${ad.title}</span>
 					</td>
 					<td>
-					   ${article.category.name}
+						${ad.position.name}
 					</td>
 					<td>
-					  <#if article.publication>
-						<span class="trueIcon">&nbsp;</span>
-					  <#else>
-					    <span class="falseIcon">&nbsp;</span>
-					  </#if>
+					<#if ad.type==1>
+					文本
+					<#elseif ad.type==2>
+					图片
+					<#elseif ad.type==3>
+					flash
+					</#if>
+						
 					</td>
 					<td>
-						${article.createDate}
+						<#if ad.beginDate??>
+							<span title="${ad.beginDate?string("yyyy-MM-dd HH:mm:ss")}">${ad.beginDate}</span>
+						<#else>
+							-
+						</#if>
 					</td>
 					<td>
-						<a href="${base}/admin/article/edit!${article.id}.do">[编辑]</a>
-							<a href="${base}/help/article-${article.id}.do" target="_blank">[查看]</a>
+						<#if ad.endDate??>
+							<span title="${ad.endDate?string("yyyy-MM-dd HH:mm:ss")}">${ad.endDate}</span>
+						<#else>
+							-
+						</#if>
+					</td>
+					<td>
+						${ad.orders}
+					</td>
+					<td>
+						<a href="edit.do?id=${ad.id}">[编辑]</a>
 					</td>
 				</tr>
-		</#list>
-	</table>
-
-	<#include "../common/pager.ftl">
-</form>
-	
+			</#list>	
+				
+		</table>
+		<#include "../../common/pager.ftl">
+	</form>
 </body>
 </html>

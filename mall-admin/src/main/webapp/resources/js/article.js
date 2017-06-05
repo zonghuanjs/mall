@@ -26,7 +26,7 @@ $().ready(function() {
 				},
 				filterMode: false,
 				filePostName: 'file',
-				uploadJson: site.base + '/admin/file/upload.do'
+				uploadJson: '/admin/file/upload.do'
 			});
 		});
 	}

@@ -4,25 +4,24 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加文章</title>
 
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css"/>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.tab.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/article.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/editor/kindeditor.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.tab.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
+<script type="text/javascript" src="${base}/resources/js/article.js"></script>
+<script type="text/javascript" src="${base}/resources/editor/kindeditor.js"></script>
 <script type="text/javascript">
 
 </script>
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 添加文章分类
+		<a href="${base}/home.do">首页</a> &raquo; 添加文章分类
 	</div>
-	<form id="inputForm" action="<#if article??>${base}/admin/article/save!${article.id}.do<#else>${base}/admin/article/add.do</#if>" method="post">
+	<form id="inputForm" action="<#if article??>save.do?id=${article.id}<#else>add.do</#if>" method="post">
 		<ul id="tab" class="tab">
 			<li>
 				<input type="button" value="基本信息" />
@@ -168,7 +167,7 @@
 				</th>
 				<td>
 					<input type="submit" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/article/list.do'" />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='javascript:history.go(-1)'" />
 				</td>
 			</tr>
 		</table>

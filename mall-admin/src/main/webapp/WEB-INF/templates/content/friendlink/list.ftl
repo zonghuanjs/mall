@@ -2,22 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>广告位列表</title>
-
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css" />
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
+<title>友情链接列表 </title>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css" />
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 
 </head>
 <body>
+	<#assign mall_url="cn.tekism.mall.freemarker.URLMethod"?new()>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 广告位列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="${base}/home.do">首页</a> &raquo; 友情链接列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
 	<form id="listForm" action="" method="get">
 		<div class="bar">
-			<a href="${base}/admin/adPosition/add.do" class="iconButton">
+			<a href="add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -53,12 +53,12 @@
 				<div class="search">
 					<span id="searchPropertySelect" class="arrow">&nbsp;</span>
 					<input type="text" id="searchValue" name="searchValue" <#if searchValue??>value="${searchValue}"</#if> maxlength="200" />
-					<button id="searchButton" type="button">&nbsp;</button>
+					<button type="submit">&nbsp;</button>
 				</div>
 				<div class="popupMenu">
 					<ul id="searchPropertyOption">
 						<li>
-							<a href="javascript:;" val="name" <#if searchProperty??&&searchProperty=="name">class="current"</#if>>名称</a>
+							<a href="javascript:;" val="name" <#if searchProperty??&&searchProperty=="name">class="current"</#if> >名称</a>
 						</li>
 					</ul>
 				</div>
@@ -70,48 +70,58 @@
 					<input type="checkbox" id="selectAll" />
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="name" >名称</a>
+					<a href="javascript:;" class="sort" name="name">名称</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="width">宽度</a>
+					<a href="javascript:;" class="sort" name="logo">logo</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="height">高度</a>
+					<a href="javascript:;" class="sort" name="url">链接地址</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="description">描述</a>
+					<a href="javascript:;" class="sort" name="order">排序</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="createDate">创建日期</a>
 				</th>
 				<th>
 					<span>操作</span>
 				</th>
 			</tr>
-			<#list adPositionList as adPosition>
+			<#list friendlinkList as friendlink>
 				<tr>
 					<td>
-						<input type="checkbox" name="ids" value="${adPosition.id}" />
+						<input type="checkbox" name="ids" value="${friendlink.id}" />
 					</td>
 					<td>
-						${adPosition.name}
+						${friendlink.name}
 					</td>
 					<td>
-						${adPosition.width}
+					 <#if friendlink.type==2>
+				          <a href="${mall_url(friendlink.logo, base)}" target="_blank">查看</a>
+				    <#else>
+				           -
+				    </#if>
+							
 					</td>
 					<td>
-						${adPosition.height}
+					
+						<a href="${friendlink.url}" target="_blank">${friendlink.url}</a>
 					</td>
 					<td>
-					    ${adPosition.description}
+						${friendlink.orders}
 					</td>
 					<td>
-						<a href="${base}/admin/adPosition/edit!${adPosition.id}.do">[编辑]</a>
+						<span title="${friendlink.createDate}">${friendlink.createDate}</span>
+					</td>
+					<td>
+						<a href="edit.do?id=${friendlink.id}">[编辑]</a>
 					</td>
 				</tr>
 			</#list>	
-				
-							
-				
+																						
 		</table>
-        <#include "../common/pager.ftl">
+		<#include "../../common/pager.ftl">
 	</form>
 </body>
 </html>

@@ -3,20 +3,20 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>友情链接列表 </title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/main.css" />
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/main.css" />
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
 
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 导航列表
+		<a href="${base}/home.do">首页</a> &raquo; 导航列表
 	</div>
-	<form id="listForm" action="list.jhtml" method="get">
+	<form id="listForm" action="" method="get">
 		<div class="bar">
-			<a href="${base}/admin/navigation/add.do" class="iconButton">
+			<a href="add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -73,7 +73,7 @@
 						${navigation.orders}
 				</td>
 				<td>
-					<a href="${base}/admin/navigation/edit!${navigation.id}.do">[编辑]</a>
+					<a href="edit.do?id=${navigation.id}">[编辑]</a>
 				</td>
 		   </tr>
 		</#list>
@@ -104,7 +104,7 @@
 						${navigation.orders}
 				</td>
 				<td>
-					<a href="${base}/admin/navigation/edit!${navigation.id}.do">[编辑]</a>
+					<a href="edit.do?id=${navigation.id}">[编辑]</a>
 				</td>
 		   </tr>
 		</#list>	
@@ -135,7 +135,7 @@
 						${navigation.orders}
 				</td>
 				<td>
-					<a href="${base}/admin/navigation/edit!${navigation.id}.do">[编辑]</a>
+					<a href="edit.do?id=${navigation.id}">[编辑]</a>
 				</td>
 		   </tr>
 		</#list>			
