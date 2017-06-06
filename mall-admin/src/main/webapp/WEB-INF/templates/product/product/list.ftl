@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>商品管理</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.tab.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.tab.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
 <style type="text/css">
 .moreTable th {
 	width: 80px;
@@ -68,9 +68,9 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 商品列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="${base}/home.do">首页</a> &raquo; 商品列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
-	<form id="listForm" action="${base}/admin/product/list.do" method="get">
+	<form id="listForm" action="" method="get">
 		<input type="hidden" id="productCategoryId" name="productCategoryId" <#if productCategoryId??>value="${productCategoryId}" </#if> />
 		<input type="hidden" id="brandId" name="brandId" <#if brandId??>value="${brandId}" </#if> />
 		<input type="hidden" id="promotionId" name="promotionId"<#if promotionId??>value="${promotionId}" </#if> />
@@ -80,18 +80,14 @@ $().ready(function() {
 		<input type="hidden" id="top" name="top" <#if top??>value="${top}" </#if> />
 		<input type="hidden" id="gift" name="gift" <#if gift??>value="${gift}" </#if> />
 		<input type="hidden" id="stock" name="stock" <#if stock??>value="${stock}" </#if> />
-		<div class="bar">
-		<#if authorities?seq_contains('admin:product:add')>
-			<a href="${base}/admin/product/add.do" class="iconButton">
+		<div class="bar">		
+			<a href="add.do" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
-		</#if>
-			<div class="buttonWrap">
-			<#if authorities?seq_contains('admin:product:delete')>
+			<div class="buttonWrap">			
 				<a href="javascript:;" id="deleteButton" class="iconButton disabled">
 					<span class="deleteIcon">&nbsp;</span>删除
-				</a>
-			</#if>
+				</a>			
 				<a href="javascript:;" id="refreshButton" class="iconButton">
 					<span class="refreshIcon">&nbsp;</span>刷新
 				</a>
@@ -237,14 +233,14 @@ $().ready(function() {
 					</td>
 					<td>
 					<#if authorities?seq_contains('admin:product:edit')>
-						<a href="${base}/admin/product/edit.do?id=${product.id}">[编辑]</a>
+						<a href="edit.do?id=${product.id}">[编辑]</a>
 					</#if>
 						<a href="${base}/product/product!${product.id}.do" target="_blank">[查看]</a>
 					</td>
 				</tr>
 			</#list>
 		</table>
-		<#include "../common/pager.ftl">
+		<#include "../../common/pager.ftl">
 	</form>
 	
 </body>

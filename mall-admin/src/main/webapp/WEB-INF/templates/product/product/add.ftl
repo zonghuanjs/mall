@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>添加商品</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.tab.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/editor/kindeditor.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!product.do"></script>
-<script type="text/javascript" src="${base}/admin/js/js!productAdd.do"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.tab.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
+<script type="text/javascript" src="${base}/resources/editor/kindeditor.js"></script>
+<script type="text/javascript" src="${base}/resources/js/product.js"></script>
 <script type="text/javascript">
 $(function(){
 
@@ -26,7 +25,7 @@ $(function(){
 				},
 				filterMode: false,
 				filePostName: 'file',
-				uploadJson:'${base}/admin/file/upload.do'
+				uploadJson:'${base}/file/upload.do'
 			});
 		});
 	}
@@ -72,9 +71,9 @@ $(function(){
 </head>
 <body>
 	<div class="path">
-		<a href="${base}/admin/index.do">首页</a> &raquo; 添加商品
+		<a href="index.do">首页</a> &raquo; 添加商品
 	</div>
-	<form id="inputForm" action="${base}/admin/product/add.do" method="post">
+	<form id="inputForm" action="add.do" method="post">
 		<ul id="tab" class="tab">
 			<li>
 				<input type="button" value="基本信息" />
@@ -480,7 +479,7 @@ $(function(){
 				</th>
 				<td>
 					<input type="submit" id="sub" class="button" value="确&nbsp;&nbsp;定" />
-					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='${base}/admin/product/list.do'" />
+					<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="javascript:history.go(-1)'" />
 				</td>
 			</tr>
 		</table>
