@@ -14,51 +14,45 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
-/**
- * 用户浏览记录实体类
- * 
- * @author shaoling.mi
- *
- */
 @Entity
-@Table(name="tb_browsing_histories")
+@Table(name = "tb_browsing_histories")
 public class BrowsingHistory {
 
 	@Id
 	@GeneratedValue
-	@Column(name="id")
-	private Long id; 
-	
+	@Column(name = "id")
+	private Long id;
+
 	@Column(name = "access_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date accessDate; //访问时间
-	
+	private Date accessDate; // 访问时间
+
 	@Column(name = "leave_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date leaveDate; //离开时间
-	
+	private Date leaveDate; // 离开时间
+
 	@Column(name = "userIp")
-	private String userIp; 
-	
-	@JoinColumn(name="member")
-	@ManyToOne(targetEntity=Member.class, fetch=FetchType.LAZY)
-	private Member member; 
-	
+	private String userIp;
+
+	@JoinColumn(name = "member")
+	@ManyToOne(targetEntity = Member.class, fetch = FetchType.LAZY)
+	private Member member;
+
 	@Column(name = "type")
-	private int type;//1:商品  2：活动页  ... 
-	
+	private int type;// 1:商品 2：活动页 ...
+
 	@JoinColumn(name = "product")
-	@ManyToOne(targetEntity=Product.class, fetch=FetchType.LAZY)
-	@NotFound(action=NotFoundAction.IGNORE) 
-	private Product product;//商品    对应type=1
-	
+	@ManyToOne(targetEntity = Product.class, fetch = FetchType.LAZY)
+	@NotFound(action = NotFoundAction.IGNORE)
+	private Product product;// 商品 对应type=1
+
 	@JoinColumn(name = "activity")
-	@ManyToOne(targetEntity=SalesActivity.class, fetch=FetchType.LAZY)
-	@NotFound(action=NotFoundAction.IGNORE)
-	private SalesActivity activity;//活动  对应type=2
-	
-	public BrowsingHistory(){
-		
+	@ManyToOne(targetEntity = SalesActivity.class, fetch = FetchType.LAZY)
+	@NotFound(action = NotFoundAction.IGNORE)
+	private SalesActivity activity;// 活动 对应type=2
+
+	public BrowsingHistory() {
+
 		this.accessDate = new Date();
 	}
 
@@ -125,5 +119,5 @@ public class BrowsingHistory {
 	public void setActivity(SalesActivity activity) {
 		this.activity = activity;
 	}
-	
+
 }

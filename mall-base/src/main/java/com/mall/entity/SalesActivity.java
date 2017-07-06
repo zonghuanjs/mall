@@ -10,58 +10,52 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-/**
- * 商城销售活动
- * 涉及促销打折抽奖等等活动 
- * 
- * @author shaoling.mi
- *
- */
 @Entity
-@Table(name="tb_sales_activity")
+@Table(name = "tb_sales_activity")
 public class SalesActivity {
 
 	@Id
 	@Column(name = "id")
 	@GeneratedValue
 	private Long id;
-	
+
 	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate; //创建时间
-	
+	private Date createDate; // 创建时间
+
 	@Column(name = "modify_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date modifyDate; //修改时间
-	
+	private Date modifyDate; // 修改时间
+
 	@Column(name = "begin_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date beginDate; //开始时间
-	
+	private Date beginDate; // 开始时间
+
 	@Column(name = "end_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date endDate; //结束时间
-	
+	private Date endDate; // 结束时间
+
 	@Column(name = "title")
-	private String title;//活动主题
-	
+	private String title;// 活动主题
+
 	@Column(name = "thumbnail")
-	private String thumbnail;//活动图片image的URL 全路径
-	
+	private String thumbnail;// 活动图片image的URL 全路径
+
 	@Column(name = "url")
-	private String url;//活动链接地址   全路径
-	
+	private String url;// 活动链接地址 全路径
+
 	@Column(name = "type")
-	private int type;//活动类型 1：减价 打折促销  2：节日促销  3：积分促销   4：赠送促销（买赠送其他商品）5：抽奖活动  6：限时限量抢购  7：众筹促销  8：答题竞猜促销  9：参与游戏促销
+	private int type;// 活动类型 1：减价 打折促销 2：节日促销 3：积分促销 4：赠送促销（买赠送其他商品）5：抽奖活动
+						// 6：限时限量抢购 7：众筹促销 8：答题竞猜促销 9：参与游戏促销
 
 	@Column(name = "deleted")
-	private boolean isDeleted;//是否已经删除   实际数据库记录未删除，只是字段变动    true：删除  false：未删除 
-	
+	private boolean isDeleted;// 是否已经删除 实际数据库记录未删除，只是字段变动 true：删除 false：未删除
+
 	@Transient
-	private int status;//状态  1：未开始  2：进行中 3：活动结束 
-	
-	public SalesActivity(){
-		
+	private int status;// 状态 1：未开始 2：进行中 3：活动结束
+
+	public SalesActivity() {
+
 	}
 
 	public Long getId() {
@@ -143,28 +137,29 @@ public class SalesActivity {
 	public void setDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
-	
+
 	public int getStatus() {
-		
-		//状态  1：未开始  2：进行中 3：活动结束 
-		int s = 2;  
-		Date now =  new Date();
-		
-		if(now.before(this.beginDate)){
-			s = 1; 
-		}else if(now.after(this.endDate)){
-			s = 3; 
+
+		// 状态 1：未开始 2：进行中 3：活动结束
+		int s = 2;
+		Date now = new Date();
+
+		if (now.before(this.beginDate)) {
+			s = 1;
+		} else if (now.after(this.endDate)) {
+			s = 3;
 		}
-		
+
 		return s;
 	}
 
-	public String getActivityDesc(){
-		
+	public String getActivityDesc() {
+
 		String desc = "";
-		//活动类型 1：减价 打折促销  2：节日促销  3：积分促销   4：买就送促销（买赠送其他商品）5：抽奖活动  6：限时限量抢购  7：众筹促销  8：答题竞猜促销  9：参与游戏促销
-		switch(this.type){
-		
+		// 活动类型 1：减价 打折促销 2：节日促销 3：积分促销 4：买就送促销（买赠送其他商品）5：抽奖活动 6：限时限量抢购 7：众筹促销
+		// 8：答题竞猜促销 9：参与游戏促销
+		switch (this.type) {
+
 		case 1:
 			desc = "销价打折促销";
 			break;
@@ -193,8 +188,8 @@ public class SalesActivity {
 			desc = "参与游戏促销";
 			break;
 		}
-		
+
 		return desc;
 	}
-	
+
 }

@@ -24,12 +24,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import com.mall.service.OrderService;
 import com.mall.util.SpringUtil;
 
-/**
- * @author Lijun
- * @version 2015年1月7日上午8:34:02
- */
 @Entity
 @Table(name="tb_apply")
 public class Apply
@@ -678,7 +675,7 @@ public class Apply
 		Order order = null;
 		if(this.attributes.get(Key.repairOrder) != null)
 		{
-			/*OrderService service = (OrderService)SpringUtil.getBean("orderServiceImpl");
+			OrderService service = (OrderService)SpringUtil.getBean("orderServiceImpl");
 			try
 			{
 				Long orderId = Long.valueOf(this.attributes.get(Key.repairOrder));
@@ -687,7 +684,7 @@ public class Apply
 			catch(Exception ex)
 			{
 				
-			}*/
+			}
 		}
 		return order;
 	}

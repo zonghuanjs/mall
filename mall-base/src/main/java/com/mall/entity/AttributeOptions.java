@@ -9,59 +9,46 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- * 
- * @author Lijun
- *
- */
 @Entity
 @Table(name = "tb_attribute_options")
-public class AttributeOptions
-{
+public class AttributeOptions {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue
 	private Long id;
-	
+
 	@ManyToOne(targetEntity = Attribute.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "attribute")
-	private Attribute attribute;           
-	
+	private Attribute attribute;
+
 	@Column(name = "options")
-	private String options;   //可选项
-	
-	public AttributeOptions()
-	{
+	private String options; // 可选项
+
+	public AttributeOptions() {
 
 	}
 
-	public Long getId()
-	{
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)
-	{
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Attribute getAttribute()
-	{
+	public Attribute getAttribute() {
 		return attribute;
 	}
 
-	public void setAttribute(Attribute attribute)
-	{
+	public void setAttribute(Attribute attribute) {
 		this.attribute = attribute;
 	}
 
-	public String getOptions()
-	{
+	public String getOptions() {
 		return options;
 	}
 
-	public void setOptions(String options)
-	{
+	public void setOptions(String options) {
 		this.options = options;
 	}
 

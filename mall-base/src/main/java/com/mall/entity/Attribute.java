@@ -12,8 +12,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tb_attribute")
-public class Attribute
-{
+public class Attribute {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue
@@ -39,78 +38,63 @@ public class Attribute
 	@Column(name = "product_category")
 	private Long productCategory;//
 
-	public Attribute()
-	{
+	public Attribute() {
 
 	}
 
-	public Long getId()
-	{
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)
-	{
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Date getCreateDate()
-	{
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate)
-	{
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
-	public Date getModifyDate()
-	{
+	public Date getModifyDate() {
 		return modifyDate;
 	}
 
-	public void setModifyDate(Date modifyDate)
-	{
+	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 
-	public int getOrders()
-	{
+	public int getOrders() {
 		return orders;
 	}
 
-	public void setOrders(int orders)
-	{
+	public void setOrders(int orders) {
 		this.orders = orders;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String name)
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public int getPropoertyIndex()
-	{
+	public int getPropoertyIndex() {
 		return propoertyIndex;
 	}
 
-	public void setPropoertyIndex(int propoertyIndex)
-	{
+	public void setPropoertyIndex(int propoertyIndex) {
 		this.propoertyIndex = propoertyIndex;
 	}
 
-	public Long getProductCategory()
-	{
+	public Long getProductCategory() {
 		return productCategory;
 	}
 
-	public void setProductCategory(Long productCategory)
-	{
+	public void setProductCategory(Long productCategory) {
 		this.productCategory = productCategory;
 	}
 

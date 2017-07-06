@@ -17,11 +17,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * 
- * @author ChenMingcai
- *
- */
 @Entity
 @Table(name="tb_admin")
 public class Admin

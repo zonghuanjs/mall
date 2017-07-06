@@ -2,20 +2,19 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>订单列表</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css"/>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/list.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/datePicker/WdatePicker.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css"/>
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/list.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/datePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
 
 </head>
 <body>
 	<#assign bs_check="cn.tekism.mall.freemarker.book.BookSuccessCheckMethod"?new()>
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 订单列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="${base}/home.do">首页</a> &raquo; 订单列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
 	<form id="listForm" action="" method="get">
 		<input type="hidden" id="orderStatus" name="orderStatus" <#if orderStatus??>value="${orderStatus}" </#if>/>
@@ -203,10 +202,10 @@
 					</td>
 						
 					<td>
-						<a href="${base}/admin/order/reserve/view.do?id=${order.id}">[查看]</a>
+						<a href="${base}/order/reserve/view.do?id=${order.id}">[查看]</a>
 					<#if adminView.authorities?seq_contains('admin:order:edit')>
 						<#if order.orderStatus!=-1 && order.orderStatus!=0 >
-						<a href="${base}/admin/order/edit.do?id=${order.id}">[编辑]</a>
+						<a href="${base}/order/edit.do?id=${order.id}">[编辑]</a>
 						</#if>
 					</#if>
 					</td>

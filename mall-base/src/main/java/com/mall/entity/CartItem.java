@@ -14,113 +14,106 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * 购物车物品实体
- * @author ChenMingcai
- *
- */
-
 @Entity
-@Table(name="tb_cart_item")
-public class CartItem
-{
+@Table(name = "tb_cart_item")
+public class CartItem {
 	@Id
 	@GeneratedValue
-	@Column(name="id")
-	private Long id;//物品编号
-	
-	@Column(name="create_date")
+	@Column(name = "id")
+	private Long id;// 物品编号
+
+	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate;//加入购物车时间
-	
-	@Column(name="modify_date")
+	private Date createDate;// 加入购物车时间
+
+	@Column(name = "modify_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date modifyDate;//修改时间
-	
-	@Column(name="quantity")
-	private int quantity;//数量
-	
-	@ManyToOne(targetEntity=Cart.class, cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.LAZY)
-	@JoinColumn(name="cart")
-	private Cart cart;//所属购物车
-	
-	@ManyToOne(targetEntity=Product.class, cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.LAZY)
-	@JoinColumn(name="product")
-	private Product product;//对应商品
-	
-	@Column(name="amount")
-	private double amount; //总价
-	
-	@Column(name="buy")
-	private boolean buy;//是否要进行结算
-	
-	public CartItem()
-	{
-		
+	private Date modifyDate;// 修改时间
+
+	@Column(name = "quantity")
+	private int quantity;// 数量
+
+	@ManyToOne(targetEntity = Cart.class, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "cart")
+	private Cart cart;// 所属购物车
+
+	@ManyToOne(targetEntity = Product.class, cascade = { CascadeType.PERSIST,
+			CascadeType.MERGE }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "product")
+	private Product product;// 对应商品
+
+	@Column(name = "amount")
+	private double amount; // 总价
+
+	@Column(name = "buy")
+	private boolean buy;// 是否要进行结算
+
+	public CartItem() {
+
 	}
-	public Long getId()
-	{
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(Long id)
-	{
+
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public Date getCreateDate()
-	{
+
+	public Date getCreateDate() {
 		return createDate;
 	}
-	public void setCreateDate(Date createDate)
-	{
+
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public Date getModifyDate()
-	{
+
+	public Date getModifyDate() {
 		return modifyDate;
 	}
-	public void setModifyDate(Date modifyDate)
-	{
+
+	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-	public int getQuantity()
-	{
+
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity)
-	{
+
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public Cart getCart()
-	{
+
+	public Cart getCart() {
 		return cart;
 	}
-	public void setCart(Cart cart)
-	{
+
+	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	public Product getProduct()
-	{
+
+	public Product getProduct() {
 		return product;
 	}
-	public void setProduct(Product product)
-	{
+
+	public void setProduct(Product product) {
 		this.product = product;
 	}
-	public double getAmount()
-	{
+
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(double amount)
-	{
+
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public boolean isBuy()
-	{
+
+	public boolean isBuy() {
 		return buy;
 	}
-	public void setBuy(boolean buy)
-	{
+
+	public void setBuy(boolean buy) {
 		this.buy = buy;
 	}
-	
+
 }

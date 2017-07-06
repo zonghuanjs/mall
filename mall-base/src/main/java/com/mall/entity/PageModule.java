@@ -22,13 +22,6 @@ import javax.persistence.TemporalType;
 
 //import cn.tekism.mall.common.PageType;
 
-/**
- * 页面模块
- * @author ChenMingcai
- * 2016-12-14
- *
- */
-
 @Entity
 @Table(name="tk_page_module")
 public class PageModule extends BaseEntity
@@ -37,7 +30,6 @@ public class PageModule extends BaseEntity
 	
 	/**
 	 * 模块类型
-	 * @author ChenMingcai
 	 *
 	 */
 	public enum Type

@@ -17,11 +17,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import com.mall.util.RequestUtil;
-/**
- * 
- * @author huan.zong
- *
- */
+
 @Entity
 @Table(name = "tb_ad_position")
 public class AdPosition extends BaseEntity

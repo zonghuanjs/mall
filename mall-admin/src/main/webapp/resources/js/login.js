@@ -43,7 +43,7 @@ $(function() {
 	$validateCodeImg.bind('click', function() {
 		var t = new Date();
 		$('#validateCodeImg').attr('src',
-				'validateCode/code.html?' + t.getTime());
+				'validateCode/code.do?' + t.getTime());
 	});
 
 	// 登录结果
@@ -68,7 +68,7 @@ $(function() {
 					}
 					try {
 						if (data.errCode == 0) {
-							top.location.href = 'index.html';
+							top.location.href = 'index.do';
 						} else {
 							switch (data.errCode) {
 							case 1310:

@@ -10,82 +10,65 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * 自动库存任务数据实体
- * @author ChenMingcai
- *
- */
-
 @Entity
-@Table(name="tb_task_data")
-public class StockTaskData
-{
+@Table(name = "tb_task_data")
+public class StockTaskData {
 	@Id
 	@GeneratedValue
-	@Column(name="id")
-	private Long id;//实体标识符
-	
-	@Column(name="start_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date startDate;//时间区间左侧
-	
-	@Column(name="end_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date endDate;//时间区间右侧
-	
-	@Column(name="product")
-	private Long product;//商品ID
-	
-	@Column(name="amount")
-	private int amount;//库存改变量
+	@Column(name = "id")
+	private Long id;// 实体标识符
 
-	public Long getId()
-	{
+	@Column(name = "start_date")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date startDate;// 时间区间左侧
+
+	@Column(name = "end_date")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date endDate;// 时间区间右侧
+
+	@Column(name = "product")
+	private Long product;// 商品ID
+
+	@Column(name = "amount")
+	private int amount;// 库存改变量
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)
-	{
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Date getStartDate()
-	{
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate)
-	{
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate()
-	{
+	public Date getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate)
-	{
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
-	public Long getProduct()
-	{
+	public Long getProduct() {
 		return product;
 	}
 
-	public void setProduct(Long product)
-	{
+	public void setProduct(Long product) {
 		this.product = product;
 	}
 
-	public int getAmount()
-	{
+	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount)
-	{
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 }

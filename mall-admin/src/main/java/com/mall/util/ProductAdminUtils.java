@@ -165,7 +165,7 @@ public class ProductAdminUtils
 		model.setThumbnail(product.getThumbnail());
 		model.setPoint(product.getPoint());
 		model.setBrand(product.getBrand());
-		model.setWarehouse(product.getWarehouse());
+		//model.setWarehouse(product.getWarehouse());
 		
 		//克隆标签
 		model.getTags().addAll(product.getTags());

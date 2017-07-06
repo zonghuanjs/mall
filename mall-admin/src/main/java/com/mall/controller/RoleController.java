@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mall.annotation.LogMethod;
 import com.mall.controller.base.BaseController;
 import com.mall.entity.Role;
 import com.mall.log.OperationType;
-import com.mall.log.annotation.LogMethod;
 import com.mall.pager.Pager;
 import com.mall.service.RoleService;
 import com.mall.util.CommonUtil;
@@ -88,7 +88,7 @@ public class RoleController extends BaseController
 	 * @return
 	 */
 	@RequestMapping(value="add", method=RequestMethod.POST)
-	//@AdminOperationMethod(operationType=AdminOperationType.addRole)
+	@LogMethod(type=OperationType.add, message="添加角色", parameter={"name"})
 	public String newRole(@RequestParam("name") String name)
 	{
 		Role model = new Role();
@@ -106,6 +106,28 @@ public class RoleController extends BaseController
 		model.setSystem(false);
 		this.roleSerivce.add(model);
 		return "redirect:/role/list.html";
+	}
+	
+	/**
+	 * 跳转编辑页面
+	 * @param roleId
+	 * @return
+	 */
+	@RequestMapping(value="edit", method=RequestMethod.GET)
+	public ModelAndView editRole(@RequestParam("id") Long roleId)
+	{
+		ModelAndView mv = new ModelAndView("system/role/add");
+		if(roleId != null)
+		{
+			Role role = this.roleSerivce.get(roleId);
+			if(role != null)
+			{
+				mv.addObject("role", role);
+				String[] array = role.getAuthorities().split(",");
+				mv.addObject("role_authorities", array);
+			}
+		}
+		return mv;
 	}
 	
 	/**
@@ -136,23 +158,6 @@ public class RoleController extends BaseController
 			}
 		}
 		return "redirect:/role/list.html";
-	}
-	
-	@RequestMapping(value="edit", method=RequestMethod.GET)
-	public ModelAndView editRole(@RequestParam("id") Long roleId)
-	{
-		ModelAndView mv = new ModelAndView("system/role/add");
-		if(roleId != null)
-		{
-			Role role = this.roleSerivce.get(roleId);
-			if(role != null)
-			{
-				mv.addObject("role", role);
-				String[] array = role.getAuthorities().split(",");
-				mv.addObject("role_authorities", array);
-			}
-		}
-		return mv;
 	}
 	
 	/**

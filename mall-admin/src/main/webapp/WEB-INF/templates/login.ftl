@@ -13,7 +13,7 @@
 	<div class="main">
 		<div class="theme">
 	    	<div class="title">特科芯商城后台管理系统</div>
-	       <form id="loginForm" action="login.html" method="post" target="loginFrame">
+	       <form id="loginForm" action="login.do" method="post" target="loginFrame">
 		        <div class="login">
 		            <div class="item">
 		            	<div class="row">
@@ -32,7 +32,7 @@
 		                    	<input type="text" id="validateCode" name="validateCode" class="valicode" maxlength="4" style="width:100px;"/>
 		                    </div>
 		                    <div class="code">
-								<img src="validateCode/code.html" id="validateCodeImg" class="validateCodeImg"/>
+								<img src="validateCode/code.do" id="validateCodeImg" class="validateCodeImg"/>
 		                    </div>
 		                    <div class="clear"></div>
 		                </div>

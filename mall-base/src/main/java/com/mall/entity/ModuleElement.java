@@ -13,16 +13,9 @@ import javax.persistence.MapKeyClass;
 import javax.persistence.MapKeyColumn;
 import javax.persistence.Table;
 
-
-/**
- * 
- * @author huan.zong
- *
- */
 @Entity
-@Table(name="tk_module_element")
-public class ModuleElement extends BaseEntity
-{
+@Table(name = "tk_module_element")
+public class ModuleElement extends BaseEntity {
 
 	/**
 	 * 
@@ -32,48 +25,46 @@ public class ModuleElement extends BaseEntity
 	/**
 	 * 图片地址
 	 */
-	@Column(name="image")
+	@Column(name = "image")
 	private String image;
-	
+
 	/**
 	 * 连接地址
 	 */
-	@Column(name="link")
+	@Column(name = "link")
 	private String link;
-	
+
 	/**
 	 * 元素标题
 	 */
-	@Column(name="title")
+	@Column(name = "title")
 	private String title;
-	
+
 	/**
 	 * 显示顺序
 	 */
-	@Column(name="n_orders")
+	@Column(name = "n_orders")
 	private int orders;
-	
+
 	/**
 	 * 关联模块
 	 */
-	@ManyToOne(targetEntity=PageModule.class, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = PageModule.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "modules")
 	private PageModule module;
-	
+
 	/**
 	 * 模块元素表
 	 */
 	@ElementCollection
-	@CollectionTable(name = "tk_module_element_attr", joinColumns=@JoinColumn(name="module_elemnt"))
+	@CollectionTable(name = "tk_module_element_attr", joinColumns = @JoinColumn(name = "module_elemnt"))
 	@MapKeyColumn(name = "rules")
 	@MapKeyClass(Integer.class)
-	@Column(name="element_attribute")
+	@Column(name = "element_attribute")
 	private Map<Integer, String> moduleElementAttrs;
-	
-	
-	public ModuleElement()
-	{
-		
+
+	public ModuleElement() {
+
 	}
 
 	public String getImage() {

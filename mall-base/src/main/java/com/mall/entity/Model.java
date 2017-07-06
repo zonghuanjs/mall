@@ -7,30 +7,22 @@ import javax.persistence.Id;
 
 import javax.persistence.Table;
 
-/**
- * 
- * @author huan.zong
- *
- */
 @Entity
 @Table(name = "tb_test")
-public class Model
-{
+public class Model {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue
 	private Long id;
-		
+
 	@Column(name = "name")
 	private String name;
-		
-	public Long getId()
-	{
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)
-	{
+	public void setId(Long id) {
 		this.id = id;
 	}
 

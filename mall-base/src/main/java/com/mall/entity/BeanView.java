@@ -13,16 +13,11 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.Subselect;
 import org.hibernate.annotations.Synchronize;
 
-
-
 @Entity
-@Subselect("(select create_date,member,opt_value,memo,1 as type from tk_bean_retain)"
-		+"union all" 
-		+"(select create_date,member,opt_value,memo,2 from tk_bean_used)"
-		+ "order by create_date desc")  
-@Synchronize({ "tk_bean_retain", "tk_bean_used" })  
-public class BeanView
-{
+@Subselect("(select create_date,member,opt_value,memo,1 as type from tk_bean_retain)" + "union all"
+		+ "(select create_date,member,opt_value,memo,2 from tk_bean_used)" + "order by create_date desc")
+@Synchronize({ "tk_bean_retain", "tk_bean_used" })
+public class BeanView {
 	/**
 	 * 日期
 	 */
@@ -33,7 +28,7 @@ public class BeanView
 	/**
 	 * 关联会员
 	 */
-	@ManyToOne(targetEntity=Member.class)
+	@ManyToOne(targetEntity = Member.class)
 	@JoinColumn(name = "member")
 	private Member member;
 	/**
@@ -51,49 +46,49 @@ public class BeanView
 	 */
 	@Column(name = "type")
 	private Integer type;
-	public Date getCreateDate()
-	{
+
+	public Date getCreateDate() {
 		return createDate;
 	}
-	public void setCreateDate(Date createDate)
-	{
+
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public Member getMember()
-	{
+
+	public Member getMember() {
 		return member;
 	}
-	public void setMember(Member member)
-	{
+
+	public void setMember(Member member) {
 		this.member = member;
 	}
-	public Integer getOptValue()
-	{
+
+	public Integer getOptValue() {
 		return optValue;
 	}
-	public void setOptValue(Integer optValue)
-	{
+
+	public void setOptValue(Integer optValue) {
 		this.optValue = optValue;
 	}
-	public String getMemo()
-	{
+
+	public String getMemo() {
 		return memo;
 	}
-	public void setMemo(String memo)
-	{
+
+	public void setMemo(String memo) {
 		this.memo = memo;
 	}
-	public Integer getType()
-	{
+
+	public Integer getType() {
 		return type;
 	}
-	public void setType(Integer type)
-	{
+
+	public void setType(Integer type) {
 		this.type = type;
 	}
-	public BeanView()
-	{
-		
+
+	public BeanView() {
+
 	}
-	
+
 }

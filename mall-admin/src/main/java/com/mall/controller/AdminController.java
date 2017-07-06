@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mall.annotation.LogMethod;
 import com.mall.controller.base.BaseController;
 import com.mall.entity.Admin;
 import com.mall.entity.Role;
 import com.mall.log.OperationType;
-import com.mall.log.annotation.LogMethod;
 import com.mall.pager.Pager;
 import com.mall.service.AdminService;
 import com.mall.service.RoleService;

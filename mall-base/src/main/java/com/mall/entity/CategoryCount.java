@@ -1,22 +1,15 @@
 package com.mall.entity;
 
-
-/**
- * 个人收藏中心 辅助的一个类
- * 
- * @author shaoling.mi
- *
- */
 public class CategoryCount {
 
 	private ProductCategory category;
 	private int count;
-	
-	public CategoryCount(){
-		
+
+	public CategoryCount() {
+
 	}
-	
-	public CategoryCount(ProductCategory c,int count){
+
+	public CategoryCount(ProductCategory c, int count) {
 		this.category = c;
 		this.count = count;
 	}
@@ -35,6 +28,6 @@ public class CategoryCount {
 
 	public void setCount(int count) {
 		this.count = count;
-	} 
-	
+	}
+
 }

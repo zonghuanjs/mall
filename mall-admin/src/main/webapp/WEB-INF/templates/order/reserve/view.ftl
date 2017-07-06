@@ -3,13 +3,12 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>查看预定订单</title>
-<link type="text/css" rel="stylesheet" href="${base}/resources/admin/css/list.css" />
-<script type="text/javascript" src="${base}/admin/js/js!settings.do"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.validate.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.tab.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/jquery.dialog.js"></script>
-<script type="text/javascript" src="${base}/resources/admin/js/input.js"></script>
+<link type="text/css" rel="stylesheet" href="${base}/resources/css/list.css" />
+<script type="text/javascript" src="${base}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.tab.js"></script>
+<script type="text/javascript" src="${base}/resources/js/jquery.dialog.js"></script>
+<script type="text/javascript" src="${base}/resources/js/input.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 
@@ -30,7 +29,7 @@ $().ready(function() {
 			onOk: function() {
 				//$confirmForm.submit();
 				$.ajax({
-					url: '${base}/admin/order/reserve/confirm.do?id=${order.id}',
+					url: '${base}/order/reserve/confirm.do?id=${order.id}',
 					type: 'post',
 					dataType: 'text',
 					success: function(){
@@ -46,7 +45,7 @@ $().ready(function() {
 			type: "warn",
 			content: "确定要执行丢单处理操作吗，是否继续?",
 			onOk: function() {
-				location.href = '${base}/admin/payment/add.do?id=${order.id}';
+				location.href = '${base}/payment/add.do?id=${order.id}';
 			}
 		});
 	});
@@ -57,7 +56,7 @@ $().ready(function() {
 				content: "确定要执行同意退款操作吗?",
 				onOk: function() {
 					$.ajax({          
-						url: '${base}/admin/order/reserve/refundsconfirm.do?id=${order.id}',
+						url: '${base}/order/reserve/refundsconfirm.do?id=${order.id}',
 						type: 'post',
 						dataType: 'text',
 						success: function(){
@@ -75,7 +74,7 @@ $().ready(function() {
 
 	
 	<div class="path">
-		<a href="${base}/admin/home.do">首页</a> &raquo; 查看预定订单
+		<a href="${base}/home.do">首页</a> &raquo; 查看预定订单
 	</div>
 	<ul id="tab" class="tab">
 		<li>

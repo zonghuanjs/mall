@@ -10,140 +10,114 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * 
- * @author huan.zong
- * 
- */
-
 @Entity
-@Table(name="tb_brand")
-public class Brand
-{
+@Table(name = "tb_brand")
+public class Brand {
 
 	@Id
-	@Column(name="id")
+	@Column(name = "id")
 	@GeneratedValue
 	private Long id;// 品牌编号
-	
-	@Column(name="create_date")
+
+	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;// 创建时间
-	
-	@Column(name="modify_date")
+
+	@Column(name = "modify_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date modifyDate;// 修改时间
-	
-	@Column(name="orders")
+
+	@Column(name = "orders")
 	private int orders;// 显示顺序
-	
-	@Column(name="description")
+
+	@Column(name = "description")
 	private String description;// 描述
-	
-	@Column(name="logo")
+
+	@Column(name = "logo")
 	private String logo;// 品牌logo
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;// 品牌名称
-	
-	@Column(name="type")
+
+	@Column(name = "type")
 	private int type;// 品牌类别
-	
-	@Column(name="url")
+
+	@Column(name = "url")
 	private String url;// 链接
 
-	public Long getId()
-	{
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)
-	{
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Date getCreateDate()
-	{
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate)
-	{
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
-	public Date getModifyDate()
-	{
+	public Date getModifyDate() {
 		return modifyDate;
 	}
 
-	public void setModifyDate(Date modifyDate)
-	{
+	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 
-	public int getOrders()
-	{
+	public int getOrders() {
 		return orders;
 	}
 
-	public void setOrders(int orders)
-	{
+	public void setOrders(int orders) {
 		this.orders = orders;
 	}
 
-	public String getDescription()
-	{
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description)
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getLogo()
-	{
+	public String getLogo() {
 		return logo;
 	}
 
-	public void setLogo(String logo)
-	{
+	public void setLogo(String logo) {
 		this.logo = logo;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String name)
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public int getType()
-	{
+	public int getType() {
 		return type;
 	}
 
-	public void setType(int type)
-	{
+	public void setType(int type) {
 		this.type = type;
 	}
 
-	public String getUrl()
-	{
+	public String getUrl() {
 		return url;
 	}
 
-	public void setUrl(String url)
-	{
+	public void setUrl(String url) {
 		this.url = url;
 	}
 
-	public Brand()
-	{
+	public Brand() {
 
 	}
 

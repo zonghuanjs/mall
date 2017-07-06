@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="path">
-		<a href="home.do">首页</a> &raquo; 属性列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
+		<a href="${base}/home.do">首页</a> &raquo; 属性列表 <span>(共<span id="pageTotal">${pager.totalCount?c}</span>条记录)</span>
 	</div>
 	<form id="listForm" action="" method="get">
 		<div class="bar">
@@ -116,7 +116,7 @@
 		</#list>
 		</#if>		
 		</table>
-		<#include "../common/pager.ftl">
+		<#include "../../common/pager.ftl">
 	</form>
 </body>
 </html>

@@ -19,145 +19,120 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * @author Lijun
- * @version 
- */
-
 @Entity
 @Table(name = "tb_comment")
-public class Comment
-{
+public class Comment {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue
-	private Long id; //id
-	
+	private Long id; // id
+
 	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate; //创建时间
-	
+	private Date createDate; // 创建时间
+
 	@Column(name = "modify_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date modifyDate; //修改时间
-	
+	private Date modifyDate; // 修改时间
+
 	@Column(name = "content")
-	private String content; //评论内容
-	
-	@ManyToOne(targetEntity=Member.class, fetch=FetchType.LAZY)
-	@JoinColumn(name="member")
-	private Member member; //所属会员
-	
+	private String content; // 评论内容
+
+	@ManyToOne(targetEntity = Member.class, fetch = FetchType.LAZY)
+	@JoinColumn(name = "member")
+	private Member member; // 所属会员
+
 	@Column(name = "deleted")
-	private boolean deleted; //是否删除
-	
+	private boolean deleted; // 是否删除
+
 	@Column(name = "score")
-	private int score; //评分
-	
+	private int score; // 评分
+
 	@Column(name = "ip")
-	private String ip; //ip
-	
-	@OneToOne(targetEntity=OrderItem.class, cascade={CascadeType.PERSIST, CascadeType.MERGE})
-	@JoinColumn(name="order_item")
-	private OrderItem orderItem;//关联订单项
-	
-	@ElementCollection(targetClass=String.class)
-	@CollectionTable(name="tb_comment_picture",joinColumns=@JoinColumn(name="comments"))
-	@Column(name="imgs")
+	private String ip; // ip
+
+	@OneToOne(targetEntity = OrderItem.class, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@JoinColumn(name = "order_item")
+	private OrderItem orderItem;// 关联订单项
+
+	@ElementCollection(targetClass = String.class)
+	@CollectionTable(name = "tb_comment_picture", joinColumns = @JoinColumn(name = "comments"))
+	@Column(name = "imgs")
 	private List<String> imgs;
-	
-	public Comment()
-	{
+
+	public Comment() {
 		imgs = new ArrayList<String>();
 	}
 
-	public Long getId()
-	{
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id)
-	{
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Date getCreateDate()
-	{
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate)
-	{
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
-	public Date getModifyDate()
-	{
+	public Date getModifyDate() {
 		return modifyDate;
 	}
 
-	public void setModifyDate(Date modifyDate)
-	{
+	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 
-	public String getContent()
-	{
+	public String getContent() {
 		return content;
 	}
 
-	public void setContent(String content)
-	{
+	public void setContent(String content) {
 		this.content = content;
 	}
 
-	public Member getMember()
-	{
+	public Member getMember() {
 		return member;
 	}
 
-	public void setMember(Member member)
-	{
+	public void setMember(Member member) {
 		this.member = member;
 	}
 
-	public boolean isDeleted()
-	{
+	public boolean isDeleted() {
 		return deleted;
 	}
 
-	public void setDeleted(boolean deleted)
-	{
+	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
 
-	public int getScore()
-	{
+	public int getScore() {
 		return score;
 	}
 
-	public void setScore(int score)
-	{
+	public void setScore(int score) {
 		this.score = score;
 	}
 
-	public String getIp()
-	{
+	public String getIp() {
 		return ip;
 	}
 
-	public void setIp(String ip)
-	{
+	public void setIp(String ip) {
 		this.ip = ip;
 	}
 
-	public OrderItem getOrderItem()
-	{
+	public OrderItem getOrderItem() {
 		return orderItem;
 	}
 
-	public void setOrderItem(OrderItem orderItem)
-	{
+	public void setOrderItem(OrderItem orderItem) {
 		this.orderItem = orderItem;
 	}
 
@@ -168,5 +143,5 @@ public class Comment
 	public void setImgs(List<String> imgs) {
 		this.imgs = imgs;
 	}
-	
+
 }

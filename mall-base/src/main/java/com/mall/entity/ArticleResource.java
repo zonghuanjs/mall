@@ -10,44 +10,43 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
-@Table(name="tb_article_resources")
+@Table(name = "tb_article_resources")
 public class ArticleResource {
 
 	@Id
-	@Column(name="id")
+	@Column(name = "id")
 	@GeneratedValue
 	private Long id;
-	
-	@Column(name="create_date")
+
+	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date CreateDate;//创建时间
-	
-	@Column(name="modify_date")
+	private Date CreateDate;// 创建时间
+
+	@Column(name = "modify_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date modifyDate;//修改时间
-	
-	@Column(name="title")
-	private String title;//标题
-	
-	@Column(name="orders")//排序
+	private Date modifyDate;// 修改时间
+
+	@Column(name = "title")
+	private String title;// 标题
+
+	@Column(name = "orders") // 排序
 	private int orders;
-	
-	@Column(name="url")
-	private String url; //链接地址
-	
-	
-	@Column(name="articles")
-	private Long articles; //关联article的id
-	
+
+	@Column(name = "url")
+	private String url; // 链接地址
+
+	@Column(name = "articles")
+	private Long articles; // 关联article的id
+
 	/*
-	@ManyToOne(targetEntity=Article.class,  cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.LAZY)
-	@JoinColumn(name = "articles")
-	private Article atticle;
-	*/
-	public ArticleResource(){
-		
+	 * @ManyToOne(targetEntity=Article.class, cascade={CascadeType.PERSIST,
+	 * CascadeType.MERGE}, fetch=FetchType.LAZY)
+	 * 
+	 * @JoinColumn(name = "articles") private Article atticle;
+	 */
+	public ArticleResource() {
+
 	}
 
 	public Long getId() {
@@ -105,5 +104,5 @@ public class ArticleResource {
 	public void setArticles(Long articles) {
 		this.articles = articles;
 	}
-	
+
 }

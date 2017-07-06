@@ -12,12 +12,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.mall.service.ProductService;
 import com.mall.util.SpringUtil;
 
-/**
- * @author Lijun
- * @version 2015年1月7日上午8:34:14
- */
 @Entity
 @Table(name="tb_apply_item")
 public class ApplyItem extends BaseEntity
@@ -171,11 +168,11 @@ public class ApplyItem extends BaseEntity
 		if(this.sn != null)
 		{
 			
-			/*ProductService productService = (ProductService)SpringUtil.getBean("productServiceImpl");
+			ProductService productService = (ProductService)SpringUtil.getBean("productServiceImpl");
 			if(productService != null){
 				List<Product> list = productService.getListFromProperty("sn", sn);
 				product = list.isEmpty() ? null : list.iterator().next();
-			}*/
+			}
 		}
 		
 		return product;

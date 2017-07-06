@@ -16,14 +16,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * 商城消息实体类
- * 
- * 推送系统消息 优惠券  促销消息
- * 
- * @author shaoling.mi
- *
- */
 @Entity
 @Table(name = "tb_mall_message")
 public class MallMessage {
@@ -32,49 +24,49 @@ public class MallMessage {
 	@Column(name = "id")
 	@GeneratedValue
 	private Long id;
-	
+
 	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate; //创建时间
-	
+	private Date createDate; // 创建时间
+
 	@Column(name = "modify_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date modifyDate; //修改时间
-	
+	private Date modifyDate; // 修改时间
+
 	@Column(name = "begin_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date beginDate; //消息推送开始时间
-	
+	private Date beginDate; // 消息推送开始时间
+
 	@Column(name = "end_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date endDate; //消息推送结束时间
-	
+	private Date endDate; // 消息推送结束时间
+
 	@Column(name = "type")
-	private int type;//消息类型: 1,系统消息; 2,优惠券消息; 3,促销消息
-	
+	private int type;// 消息类型: 1,系统消息; 2,优惠券消息; 3,促销消息
+
 	@Column(name = "title")
-	private String title;//消息标题 
-	
+	private String title;// 消息标题
+
 	@Column(name = "conType")
-	private int contentType;//消息内容类型    1, 文本; 2, 图片;
-	
+	private int contentType;// 消息内容类型 1, 文本; 2, 图片;
+
 	@Column(name = "content")
-	private String content;//消息内容  contentType=1时，对应的消息内容
-	
+	private String content;// 消息内容 contentType=1时，对应的消息内容
+
 	@Column(name = "imgURL")
-	private String imgURL;//消息图片  contentType=2时，对应的图片资源URL
-	
+	private String imgURL;// 消息图片 contentType=2时，对应的图片资源URL
+
 	@Column(name = "msgURL")
 	private String msgURL;//
-	
+
 	@Column(name = "enabled")
-	private boolean isEnabled;//立即启用
-	
-	@OneToMany(targetEntity=MemberRank.class,cascade={CascadeType.PERSIST, CascadeType.MERGE})
-	@JoinTable(name="tb_message_rank",joinColumns=@JoinColumn(name="messages"),inverseJoinColumns=@JoinColumn(name="ranks"))
-	private List<MemberRank> forRanks;//适用于会员等级
-	
-	public MallMessage(){
+	private boolean isEnabled;// 立即启用
+
+	@OneToMany(targetEntity = MemberRank.class, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@JoinTable(name = "tb_message_rank", joinColumns = @JoinColumn(name = "messages"), inverseJoinColumns = @JoinColumn(name = "ranks"))
+	private List<MemberRank> forRanks;// 适用于会员等级
+
+	public MallMessage() {
 		forRanks = new ArrayList<MemberRank>();
 	}
 
@@ -181,7 +173,5 @@ public class MallMessage {
 	public void setForRanks(List<MemberRank> forRanks) {
 		this.forRanks = forRanks;
 	}
-	
+
 }
-	
-	
